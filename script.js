@@ -1,16 +1,24 @@
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a');
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-function updateActiveNav() {
-  let current = '';
-  sections.forEach(section => {
-    if (window.scrollY >= section.offsetTop - 180) current = section.id;
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => navLinks.classList.remove("open"));
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add("visible");
   });
+}, { threshold: 0.12 });
 
-  navLinks.forEach(link => {
-    link.style.opacity = link.getAttribute('href') === `#${current}` ? '1' : '.55';
-  });
-}
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-window.addEventListener('scroll', updateActiveNav, { passive: true });
-updateActiveNav();
+const glow = document.querySelector(".cursor-glow");
+window.addEventListener("pointermove", (e) => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});

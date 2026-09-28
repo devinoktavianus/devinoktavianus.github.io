@@ -1,177 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal portfolio of Devin Oktavianus, showcasing projects, skills, and experience in Data Analytics and Business Intelligence.">
-  <title>Devin Oktavianus | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Devin Oktavianus — Information Systems student interested in data, people, technology, and meaningful projects." />
+  <title>Devin Oktavianus — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
-    <a href="#home" class="brand">Devin<span>.</span></a>
-    <nav>
-      <a href="#home">HOME</a>
-      <a href="#about">ABOUT</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#resume">RESUME</a>
-      <a href="#contact">CONTACT</a>
+  <div class="cursor-glow"></div>
+
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#home">DO<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#connect">Connect</a>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <div class="orb orb-one"></div>
-      <div class="orb orb-two"></div>
-      <div class="hero-content">
-        <p class="eyebrow">DATA ANALYTICS · BUSINESS INTELLIGENCE</p>
-        <h1>Hi, I'm <span>Devin Oktavianus.</span></h1>
-        <p class="hero-description">
-          Information Systems student passionate about turning data into meaningful
-          insights, visualizations, and business solutions.
+    <section class="hero container" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="dot"></span> Information Systems Student · BINUS University</p>
+        <h1>Hi, I'm <span>Devin<br>Oktavianus.</span></h1>
+        <p class="hero-text">
+          I’m an Information Systems student who enjoys exploring data, technology,
+          organizations, and the little details that make a project come together.
         </p>
-        <div class="actions">
-          <a class="btn primary" href="#projects">View My Work ↗</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/devin-oktavianus-09a71343a" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <div class="hero-actions">
+          <a class="btn primary" href="#about">Get to know me <span>↓</span></a>
+          <a class="btn ghost" href="#experience">View experience</a>
+        </div>
+        <div class="mini-note">Currently learning · building · trying new things</div>
+      </div>
+
+      <div class="hero-photo-wrap reveal delay-1">
+        <div class="photo-orbit orbit-one"></div>
+        <div class="photo-orbit orbit-two"></div>
+        <div class="photo-card">
+          <img src="profile.jpg" alt="Portrait of Devin Oktavianus" />
+          <div class="photo-caption">
+            <span>Devin Oktavianus</span>
+            <small>Student · Organizer · Curious learner</small>
+          </div>
+        </div>
+        <div class="floating-card card-data">
+          <span class="icon">↗</span>
+          <div><strong>Data</strong><small>Analytics & BI</small></div>
+        </div>
+        <div class="floating-card card-life">
+          <span class="icon">✦</span>
+          <div><strong>Outside class</strong><small>Music · Movies · Sport</small></div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <p class="section-label">ABOUT ME</p>
-      <h2>Turning data into insights.</h2>
+    <section class="marquee-strip">
+      <div>DATA ANALYTICS <span>✦</span> BUSINESS INTELLIGENCE <span>✦</span> INFORMATION SYSTEMS <span>✦</span> ORGANIZATION <span>✦</span> DATA ANALYTICS <span>✦</span></div>
+    </section>
+
+    <section class="section container" id="about">
+      <div class="section-head reveal">
+        <p class="eyebrow">01 · A little about me</p>
+        <h2>More than just a student<br><em>behind a screen.</em></h2>
+      </div>
+
       <div class="about-grid">
-        <p class="muted large">
-          I'm an Information Systems student with interests in Data Analytics,
-          Business Intelligence, data visualization, databases, and technology-driven
-          business solutions. I enjoy exploring data and transforming it into
-          information that can support better decisions.
-        </p>
-        <div class="info-card">
-          <strong>Information Systems</strong>
-          <span>BINUS University</span>
-          <strong>Focus</strong>
-          <span>Data Analytics & Business Intelligence</span>
+        <div class="about-main reveal">
+          <p class="lead">
+            I’m currently studying <strong>Information Systems at BINUS University</strong>.
+            I’m interested in the space where business, technology, and data meet —
+            especially how information can be turned into something useful and understandable.
+          </p>
+          <p>
+            Outside academics, I enjoy being involved in organizations and events.
+            Those experiences have taught me that building something is not only about
+            the final result; communication, teamwork, responsibility, and the small
+            things behind the scenes matter too.
+          </p>
+          <p>
+            I’m still learning and figuring out what direction I want to take,
+            but I enjoy the process. This portfolio is a place to document that journey,
+            from things I build to experiences I collect along the way.
+          </p>
+        </div>
+
+        <div class="about-side reveal delay-1">
+          <div class="interest-card">
+            <span class="interest-number">01</span>
+            <h3>Reading</h3>
+            <p>I like finding new perspectives through books and articles.</p>
+          </div>
+          <div class="interest-card">
+            <span class="interest-number">02</span>
+            <h3>Watching</h3>
+            <p>Movies and series are one of my favorite ways to relax and explore stories.</p>
+          </div>
+          <div class="interest-card">
+            <span class="interest-number">03</span>
+            <h3>Music</h3>
+            <p>I’m the type who always has a playlist for a certain mood.</p>
+          </div>
+          <div class="interest-card">
+            <span class="interest-number">04</span>
+            <h3>Sports</h3>
+            <p>Staying active and making time for sports keeps things balanced.</p>
+          </div>
         </div>
       </div>
 
-      <div class="skills">
-        <span>Data Analytics</span>
-        <span>Power BI</span>
-        <span>Tableau</span>
-        <span>SQL</span>
-        <span>Python</span>
-        <span>Oracle</span>
-        <span>Data Modeling</span>
-        <span>Project Management</span>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <p class="section-label">SELECTED WORK</p>
-      <h2>Projects that I've worked on.</h2>
-      <p class="muted">A selection of academic, research, business, and technology projects.</p>
-
-      <div class="projects">
-        <article class="project-card">
-          <div class="project-number">01 · DATA ANALYTICS</div>
-          <h3>Healthcare Chatbot Trust Analysis</h3>
-          <p>Quantitative research exploring factors influencing trust in healthcare chatbots.</p>
-          <div class="tags"><span>Research</span><span>SmartPLS</span><span>Data Analysis</span></div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-number">02 · BUSINESS INTELLIGENCE</div>
-          <h3>Interactive BI Dashboard</h3>
-          <p>Interactive dashboard focused on visualization, filtering, and actionable insights.</p>
-          <div class="tags"><span>Power BI</span><span>Visualization</span><span>BI</span></div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-number">03 · AI & BUSINESS</div>
-          <h3>AI Agent for UMKM</h3>
-          <p>AI middleware concept connecting fragmented business systems and automating workflows.</p>
-          <div class="tags"><span>AI</span><span>Automation</span><span>Business</span></div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-number">04 · DATABASE</div>
-          <h3>Oracle Data & Modeling Projects</h3>
-          <p>Database, data modeling, SQL, and visualization work using Oracle technologies.</p>
-          <div class="tags"><span>Oracle</span><span>SQL</span><span>Data Modeling</span></div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-number">05 · SYSTEM ANALYSIS</div>
-          <h3>Business Process & System Design</h3>
-          <p>Business process analysis and system modeling based on real business requirements.</p>
-          <div class="tags"><span>UML</span><span>Analysis</span><span>System Design</span></div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-number">06 · UI/UX</div>
-          <h3>Digital Product Design</h3>
-          <p>User journey, interface, interaction, and prototype design for digital products.</p>
-          <div class="tags"><span>Figma</span><span>UX</span><span>Prototype</span></div>
-        </article>
+      <div class="focus-row reveal">
+        <div><span>01</span><strong>Data & Analytics</strong><small>Turning information into insight</small></div>
+        <div><span>02</span><strong>Business & Technology</strong><small>Understanding how systems support people</small></div>
+        <div><span>03</span><strong>Organization</strong><small>Learning through real experiences</small></div>
       </div>
     </section>
 
-    <section id="resume" class="section">
-      <p class="section-label">RESUME</p>
-      <h2>Experience & education.</h2>
-
-      <div class="resume-grid">
-        <div class="resume-item">
-          <div class="line"></div>
-          <div>
-            <h3>HIMSISFO</h3>
-            <p>Organization · Project & Event Management</p>
-            <small>Planning, coordination, communication, and event execution.</small>
-          </div>
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">02 · Experience</p>
+          <h2>Things I’ve been<br><em>part of.</em></h2>
+          <p class="section-intro">A collection of organizational and volunteer experiences that have shaped how I work with people and projects.</p>
         </div>
 
-        <div class="resume-item">
-          <div class="line"></div>
-          <div>
-            <h3>Information Systems</h3>
-            <p>BINUS University</p>
-            <small>Focus on information systems, data, technology, and business.</small>
-          </div>
-        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Feb 2026 — Present</div>
+            <div class="timeline-content">
+              <p class="tag">HIMSISFO BINUS University</p>
+              <h3>Staff of Human Resource Development</h3>
+              <p>I am part of the Human Resource Development team, helping support activities related to members and the organization.</p>
+              <ul>
+                <li>Help prepare and run HRD activities and programs.</li>
+                <li>Work with other divisions to support organization activities.</li>
+                <li>Communicate and work together with other members to complete tasks.</li>
+              </ul>
+            </div>
+          </article>
 
-        <div class="resume-item">
-          <div class="line"></div>
-          <div>
-            <h3>Data & Technology</h3>
-            <p>Analytics · BI · Databases</p>
-            <small>Working with data analysis, visualization, SQL, and database concepts.</small>
-          </div>
-        </div>
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Mar 2026 — Sep 2026</div>
+            <div class="timeline-content">
+              <p class="tag">LDKCP HIMSISFO 2026: LUNAR</p>
+              <h3>Equipment Division Staff</h3>
+              <p>I was part of the Equipment Division, helping prepare the equipment and other things needed for the event.</p>
+              <ul>
+                <li>Prepared and organized equipment needed for the event.</li>
+                <li>Worked with the team to make sure everything was ready on time.</li>
+                <li>Helped handle equipment needs during the event.</li>
+              </ul>
+            </div>
+          </article>
 
-        <div class="resume-item">
-          <div class="line"></div>
-          <div>
-            <h3>Project Management</h3>
-            <p>Planning · Coordination · Execution</p>
-            <small>Experience coordinating teams and delivering organizational projects.</small>
-          </div>
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Feb 2026 — May 2026</div>
+            <div class="timeline-content">
+              <p class="tag">GERAK HIMSISFO 2026: VIBEZ</p>
+              <h3>Project Manager</h3>
+              <p>I was responsible for helping the team plan and run GERAK HIMSISFO 2026: VIBEZ from the preparation stage until the event was finished.</p>
+              <ul>
+                <li>Coordinated the team and made sure everyone knew their tasks.</li>
+                <li>Helped plan the timeline and checked the progress of each division.</li>
+                <li>Communicated with different teams and helped solve problems during preparation and the event.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Feb 2025 — Feb 2026</div>
+            <div class="timeline-content">
+              <p class="tag">HIMSISFO BINUS University</p>
+              <h3>Activist of Human Resource Development</h3>
+              <p>I joined the Human Resource Development team and took part in different activities within HIMSISFO.</p>
+              <ul>
+                <li>Helped prepare and run HRD activities.</li>
+                <li>Worked together with other members and divisions.</li>
+                <li>Learned how to communicate, work in a team, and take responsibility for my tasks.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Jun 2025 — Dec 2025</div>
+            <div class="timeline-content">
+              <p class="tag">LDKK Aktivis HIMSISFO 2026: IGNITE</p>
+              <h3>Vice Coordinator — Equipment Division</h3>
+              <p>I helped coordinate the Equipment Division and prepare the things needed for the event.</p>
+              <ul>
+                <li>Helped divide tasks and coordinate the equipment team.</li>
+                <li>Checked the equipment and other needs before the event.</li>
+                <li>Worked with other divisions when they needed equipment or support.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Oct 2025</div>
+            <div class="timeline-content">
+              <p class="tag">SELCAVIS HIMSISFO 2025: PRODIGI</p>
+              <h3>Volunteer Notulis</h3>
+              <p>I joined the event as a Notulis Volunteer and helped record important information during the activity.</p>
+              <ul>
+                <li>Took notes during meetings and activities.</li>
+                <li>Organized important information and discussions.</li>
+                <li>Helped the team keep records of what happened during the event.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Apr 2025 — Sep 2025</div>
+            <div class="timeline-content">
+              <p class="tag">EXPO & Welcoming Party HIMSISFO 2025: VENTURE</p>
+              <h3>Support Division Staff</h3>
+              <p>I helped the Support Division prepare and run the EXPO and Welcoming Party.</p>
+              <ul>
+                <li>Helped prepare things needed for the event.</li>
+                <li>Supported other divisions when they needed help.</li>
+                <li>Helped with activities before and during the event.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Mar 2025 — Jul 2025</div>
+            <div class="timeline-content">
+              <p class="tag">Company Visit HIMSISFO 2025: ADIWIDIA</p>
+              <h3>Vice Coordinator — Equipment Division</h3>
+              <p>I helped prepare the equipment and other needs for the HIMSISFO company visit.</p>
+              <ul>
+                <li>Prepared equipment and other things needed for the event.</li>
+                <li>Communicated with the company about event and equipment needs.</li>
+                <li>Worked with other divisions to make sure everything was prepared properly.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Sep 2026</div>
+            <div class="timeline-content">
+              <p class="tag">Teach For Indonesia</p>
+              <h3>Volunteer — Greener Day 2026</h3>
+              <p>I joined Greener Day as a volunteer and helped support the activities during the event.</p>
+              <ul>
+                <li>Helped with event activities and preparation.</li>
+                <li>Worked together with other volunteers.</li>
+                <li>Supported the team to make sure the activities ran smoothly.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">May 2025</div>
+            <div class="timeline-content">
+              <p class="tag">Nakama.id HUB</p>
+              <h3>Volunteer — NAKAMA x Meta Tech Partner Event</h3>
+              <p>I joined the event as a volunteer and helped with different activities during the program.</p>
+              <ul>
+                <li>Helped with event preparation and activities.</li>
+                <li>Supported participants and the event team when needed.</li>
+                <li>Worked together with other volunteers throughout the event.</li>
+              </ul>
+            </div>
+          </article>
+        </div>        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="projects">
+      <div class="section-head reveal">
+        <p class="eyebrow">03 · Projects</p>
+        <h2>A space for things<br><em>I’ve built.</em></h2>
+        <p class="section-intro">This section is intentionally still open. Projects will be added here as I finish and document them.</p>
+      </div>
+
+      <div class="projects-empty reveal">
+        <div class="empty-number">+</div>
+        <div>
+          <p class="tag">Coming soon</p>
+          <h3>Projects will live here.</h3>
+          <p>Each project will have its own detail page with the background, process, tools, documentation, and final result — not just a thumbnail.</p>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <p class="section-label">CONTACT</p>
-      <h2>Let's connect.</h2>
-      <p class="muted">Interested in collaboration, projects, or just connecting?</p>
-      <div class="contact-links">
-        <a href="https://www.linkedin.com/in/devin-oktavianus-09a71343a" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://github.com/Decils1" target="_blank" rel="noopener">GitHub ↗</a>
+    <section class="section connect-section" id="connect">
+      <div class="container connect-box reveal">
+        <div>
+          <p class="eyebrow">04 · Let’s connect</p>
+          <h2>Have something to<br><em>talk about?</em></h2>
+          <p>Whether it’s a project, an idea, an opportunity, or simply saying hi — feel free to reach out.</p>
+        </div>
+        <div class="connect-links">
+          <a href="https://www.linkedin.com/in/devin-oktavianus-09a71343a" target="_blank" rel="noopener">
+            <span>LinkedIn</span><b>↗</b>
+          </a>
+          <a href="https://www.instagram.com/devinoktavianusss/" target="_blank" rel="noopener">
+            <span>Instagram</span><b>↗</b>
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>© 2026 Devin Oktavianus · Built with HTML, CSS & JavaScript</footer>
+  <footer class="footer container">
+    <span>© 2026 Devin Oktavianus</span>
+    <span>Built with curiosity, not perfection.</span>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
