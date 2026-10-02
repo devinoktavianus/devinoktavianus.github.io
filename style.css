@@ -1,7 +1,3 @@
-/* =========================
-   ROOT
-========================= */
-
 :root {
 
   --bg: #f6f6f2;
@@ -83,7 +79,7 @@ button {
 
 
 /* =========================
-   NAVBAR
+   NAV
 ========================= */
 
 .nav-wrap {
@@ -97,13 +93,13 @@ button {
 
   z-index: 100;
 
-  background: rgba(246, 246, 242, 0.92);
+  background: rgba(246, 246, 242, .93);
 
   backdrop-filter: blur(14px);
 
   border-bottom: 1px solid transparent;
 
-  transition: 0.3s ease;
+  transition: .3s ease;
 
 }
 
@@ -161,15 +157,13 @@ button {
 
   position: relative;
 
-  font-size: 15px;
-
-  font-weight: 600;
+  padding: 30px 0;
 
   color: var(--dark);
 
-  padding: 30px 0;
+  font-size: 15px;
 
-  transition: color 0.25s ease;
+  font-weight: 600;
 
 }
 
@@ -192,9 +186,7 @@ button {
 
   transform: scaleX(0);
 
-  transform-origin: center;
-
-  transition: transform 0.25s ease;
+  transition: .25s ease;
 
 }
 
@@ -291,15 +283,15 @@ button {
 
 .hero h1 {
 
-  margin-top: 34px;
+  max-width: 800px;
 
-  max-width: 720px;
+  margin-top: 34px;
 
   font-family: "Manrope", sans-serif;
 
-  font-size: clamp(64px, 6vw, 104px);
+  font-size: clamp(62px, 6vw, 104px);
 
-  line-height: 0.98;
+  line-height: .98;
 
   letter-spacing: -5px;
 
@@ -310,14 +302,18 @@ button {
 
 .hero h1 span {
 
+  display: block;
+
   color: var(--blue);
+
+  white-space: nowrap;
 
 }
 
 
 .hero-text {
 
-  max-width: 660px;
+  max-width: 650px;
 
   margin-top: 38px;
 
@@ -334,8 +330,6 @@ button {
 
   display: flex;
 
-  align-items: center;
-
   gap: 12px;
 
   margin-top: 32px;
@@ -349,8 +343,6 @@ button {
 
   padding: 0 22px;
 
-  border-radius: 12px;
-
   display: inline-flex;
 
   align-items: center;
@@ -359,11 +351,13 @@ button {
 
   gap: 10px;
 
+  border-radius: 12px;
+
   font-size: 14px;
 
   font-weight: 700;
 
-  transition: 0.25s ease;
+  transition: .25s ease;
 
 }
 
@@ -379,18 +373,18 @@ button {
 
 .btn-dark:hover {
 
-  transform: translateY(-2px);
-
   background: var(--blue);
+
+  transform: translateY(-2px);
 
 }
 
 
 .btn-light {
 
-  border: 1px solid var(--line);
+  background: rgba(255,255,255,.4);
 
-  background: rgba(255,255,255,0.45);
+  border: 1px solid var(--line);
 
 }
 
@@ -442,13 +436,13 @@ button {
 
   aspect-ratio: 1;
 
-  border-radius: 50%;
-
   overflow: hidden;
+
+  border-radius: 50%;
 
   background: white;
 
-  box-shadow: 0 35px 80px rgba(20, 25, 35, 0.09);
+  box-shadow: 0 35px 80px rgba(20,25,35,.09);
 
   z-index: 2;
 
@@ -470,7 +464,7 @@ button {
 
   position: absolute;
 
-  border: 1px solid rgba(49, 92, 245, 0.17);
+  border: 1px solid rgba(49,92,245,.17);
 
   border-radius: 50%;
 
@@ -492,103 +486,79 @@ button {
 
   height: 570px;
 
-  border-color: rgba(49, 92, 245, 0.22);
+  border-color: rgba(49,92,245,.22);
 
 }
 
 
 /* =========================
-   FLOATING CARDS
+   PERSONAL CARD
 ========================= */
 
-.floating-card {
+.personal-card {
 
   position: absolute;
 
+  right: 5%;
+
+  bottom: 17%;
+
   z-index: 5;
 
-  min-width: 190px;
+  padding: 17px 19px;
 
-  padding: 15px 17px;
+  min-width: 210px;
 
-  display: flex;
-
-  align-items: center;
-
-  gap: 13px;
-
-  background: rgba(255,255,255,0.96);
+  background: rgba(255,255,255,.96);
 
   border: 1px solid #e2e3e0;
 
-  border-radius: 16px;
+  border-radius: 15px;
 
-  box-shadow: 0 18px 45px rgba(20,25,35,0.08);
-
-}
-
-
-.card-data {
-
-  left: 3%;
-
-  top: 27%;
+  box-shadow: 0 18px 45px rgba(20,25,35,.08);
 
 }
 
 
-.card-bi {
+.personal-card-label {
 
-  right: 2%;
-
-  bottom: 21%;
-
-}
-
-
-.floating-icon {
-
-  width: 40px;
-
-  height: 40px;
-
-  flex: none;
-
-  display: grid;
-
-  place-items: center;
-
-  border-radius: 11px;
-
-  background: var(--blue-soft);
+  margin-bottom: 10px;
 
   color: var(--blue);
 
-  font-size: 16px;
-
-}
-
-
-.floating-card strong {
-
-  display: block;
-
-  font-size: 13px;
+  font-size: 9px;
 
   font-weight: 800;
 
+  letter-spacing: 1px;
+
 }
 
 
-.floating-card small {
+.personal-tags {
 
-  display: block;
+  display: flex;
 
-  margin-top: 1px;
+  gap: 7px;
 
-  color: #7d838d;
+  flex-wrap: wrap;
 
-  font-size: 11px;
+}
+
+
+.personal-tags span {
+
+  padding: 5px 9px;
+
+  background: var(--blue-soft);
+
+  color: var(--dark);
+
+  border-radius: 999px;
+
+  font-size: 10px;
+
+  font-weight: 600;
 
 }
 
@@ -601,13 +571,13 @@ button {
 
   overflow: hidden;
 
+  padding: 25px 0;
+
+  background: rgba(255,255,255,.3);
+
   border-top: 1px solid var(--line);
 
   border-bottom: 1px solid var(--line);
-
-  padding: 25px 0;
-
-  background: rgba(255,255,255,0.25);
 
 }
 
@@ -622,7 +592,7 @@ button {
 
   gap: 30px;
 
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 
 }
 
@@ -636,6 +606,8 @@ button {
   font-weight: 800;
 
   letter-spacing: 1.8px;
+
+  white-space: nowrap;
 
 }
 
@@ -663,7 +635,7 @@ button {
 
 
 /* =========================
-   SECTIONS
+   SECTION
 ========================= */
 
 .section {
@@ -693,7 +665,7 @@ button {
 
   font-family: "Manrope", sans-serif;
 
-  font-size: clamp(50px, 5vw, 78px);
+  font-size: clamp(50px,5vw,78px);
 
   line-height: 1;
 
@@ -736,7 +708,7 @@ button {
 
   display: grid;
 
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 1.25fr .75fr;
 
   gap: 90px;
 
@@ -798,7 +770,7 @@ button {
 
   border-radius: 17px;
 
-  transition: 0.3s ease;
+  transition: .3s ease;
 
 }
 
@@ -807,7 +779,7 @@ button {
 
   transform: translateY(-3px);
 
-  box-shadow: 0 18px 35px rgba(20,25,35,0.06);
+  box-shadow: 0 18px 35px rgba(20,25,35,.06);
 
 }
 
@@ -886,7 +858,7 @@ button {
 
   gap: 12px;
 
-  background: #fff;
+  background: white;
 
   border: 1px solid #e4e5e1;
 
@@ -895,7 +867,6 @@ button {
 }
 
 
-.skill-item img,
 .skill-text-icon {
 
   width: 38px;
@@ -904,24 +875,13 @@ button {
 
   flex: none;
 
-  border-radius: 10px;
-
-  background: var(--blue-soft);
-
-  padding: 9px;
-
-  box-sizing: border-box;
-
-}
-
-
-.skill-text-icon {
-
   display: grid;
 
   place-items: center;
 
-  padding: 0;
+  border-radius: 10px;
+
+  background: var(--blue-soft);
 
   color: var(--blue);
 
@@ -944,7 +904,7 @@ button {
 
 
 /* =========================
-   CURRENT FOCUS
+   CAREER FOCUS
 ========================= */
 
 .focus-list {
@@ -1026,7 +986,7 @@ button {
 
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
 
   border: 1px solid var(--line);
 
@@ -1197,11 +1157,11 @@ button {
 
   flex: none;
 
+  padding-top: 4px;
+
   color: #8f96a1;
 
   font-size: 12px;
-
-  padding-top: 4px;
 
 }
 
@@ -1244,9 +1204,9 @@ button {
 
   gap: 30px;
 
-  border: 1px solid var(--line);
+  background: rgba(255,255,255,.28);
 
-  background: rgba(255,255,255,0.28);
+  border: 1px solid var(--line);
 
 }
 
@@ -1335,7 +1295,7 @@ button {
 
   font-family: "Manrope", sans-serif;
 
-  font-size: clamp(50px, 5vw, 72px);
+  font-size: clamp(50px,5vw,72px);
 
   line-height: 1;
 
@@ -1346,9 +1306,9 @@ button {
 
 .connect-box h2 em {
 
-  font-style: normal;
-
   color: #dfe5ff;
+
+  font-style: normal;
 
 }
 
@@ -1397,7 +1357,7 @@ button {
 
   color: white;
 
-  transition: 0.25s ease;
+  transition: .25s ease;
 
 }
 
@@ -1425,7 +1385,7 @@ button {
 
   background: rgba(255,255,255,.14);
 
-  font-size: 13px;
+  font-size: 11px;
 
   font-weight: 800;
 
@@ -1490,9 +1450,9 @@ button {
 
   display: flex;
 
-  justify-content: space-between;
-
   align-items: center;
+
+  justify-content: space-between;
 
   gap: 20px;
 
@@ -1535,14 +1495,15 @@ button {
 
 
 /* =========================
-   MOBILE
+   TABLET
 ========================= */
 
-@media (max-width: 1000px) {
+@media (max-width:1000px) {
+
 
   .container {
 
-    width: min(100% - 45px, 850px);
+    width: min(100% - 45px,850px);
 
   }
 
@@ -1592,7 +1553,12 @@ button {
 }
 
 
-@media (max-width: 850px) {
+/* =========================
+   MOBILE NAV
+========================= */
+
+@media (max-width:850px) {
+
 
   .nav-links {
 
@@ -1704,7 +1670,12 @@ button {
 }
 
 
-@media (max-width: 600px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:600px) {
+
 
   .container {
 
@@ -1736,9 +1707,16 @@ button {
 
   .hero h1 {
 
-    font-size: 57px;
+    font-size: 54px;
 
     letter-spacing: -3px;
+
+  }
+
+
+  .hero h1 span {
+
+    white-space: normal;
 
   }
 
@@ -1791,52 +1769,13 @@ button {
   }
 
 
-  .floating-card {
-
-    min-width: 160px;
-
-    padding: 11px;
-
-  }
-
-
-  .card-data {
-
-    left: 0;
-
-    top: 21%;
-
-  }
-
-
-  .card-bi {
+  .personal-card {
 
     right: 0;
 
-    bottom: 15%;
+    bottom: 10%;
 
-  }
-
-
-  .floating-card strong {
-
-    font-size: 11px;
-
-  }
-
-
-  .floating-card small {
-
-    font-size: 9px;
-
-  }
-
-
-  .floating-icon {
-
-    width: 34px;
-
-    height: 34px;
+    min-width: 175px;
 
   }
 
@@ -1878,13 +1817,6 @@ button {
     grid-template-columns: 35px 1fr;
 
     gap: 14px;
-
-  }
-
-
-  .experience-number {
-
-    font-size: 10px;
 
   }
 
@@ -1970,7 +1902,7 @@ button {
    REDUCE MOTION
 ========================= */
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
 
   *,
   *::before,
@@ -1978,11 +1910,11 @@ button {
 
     scroll-behavior: auto !important;
 
-    animation-duration: 0.01ms !important;
+    animation-duration: .01ms !important;
 
     animation-iteration-count: 1 !important;
 
-    transition-duration: 0.01ms !important;
+    transition-duration: .01ms !important;
 
   }
 
