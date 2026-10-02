@@ -1,9 +1,9 @@
+// =========================
+// MOBILE MENU
+// =========================
+
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
-const navWrap = document.querySelector(".nav-wrap");
-
-
-// MOBILE MENU
 
 if (menuBtn && navLinks) {
 
@@ -37,7 +37,11 @@ if (menuBtn && navLinks) {
 }
 
 
+// =========================
 // SCROLL REVEAL
+// =========================
+
+const revealElements = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
@@ -61,32 +65,42 @@ const revealObserver = new IntersectionObserver(
 );
 
 
-document.querySelectorAll(".reveal").forEach((element) => {
+revealElements.forEach((element) => {
 
   revealObserver.observe(element);
 
 });
 
 
+// =========================
 // NAVBAR SHADOW
+// =========================
+
+const navWrap = document.querySelector(".nav-wrap");
 
 window.addEventListener("scroll", () => {
 
   if (!navWrap) return;
 
-  navWrap.classList.toggle(
-    "scrolled",
-    window.scrollY > 30
-  );
+  if (window.scrollY > 30) {
+
+    navWrap.classList.add("scrolled");
+
+  } else {
+
+    navWrap.classList.remove("scrolled");
+
+  }
 
 });
 
 
+// =========================
 // ACTIVE NAVIGATION
+// =========================
 
 const sections = document.querySelectorAll("section[id]");
 const navItems = document.querySelectorAll(".nav-links a");
-
 
 const sectionObserver = new IntersectionObserver(
   (entries) => {
@@ -95,14 +109,19 @@ const sectionObserver = new IntersectionObserver(
 
       if (!entry.isIntersecting) return;
 
-      const id = entry.target.getAttribute("id");
+      const currentId = entry.target.getAttribute("id");
 
       navItems.forEach((item) => {
 
-        item.classList.toggle(
-          "active",
-          item.getAttribute("href") === `#${id}`
-        );
+        item.classList.remove("active");
+
+        if (
+          item.getAttribute("href") === `#${currentId}`
+        ) {
+
+          item.classList.add("active");
+
+        }
 
       });
 
@@ -122,22 +141,25 @@ sections.forEach((section) => {
 });
 
 
-// CURSOR GLOW
+// =========================
+// CURRENT YEAR
+// =========================
 
-const glow = document.querySelector(".cursor-glow");
+const yearElement = document.getElementById("current-year");
 
+if (yearElement) {
 
-if (
-  glow &&
-  window.matchMedia("(pointer: fine)").matches
-) {
-
-  window.addEventListener("pointermove", (event) => {
-
-    glow.style.left = `${event.clientX}px`;
-
-    glow.style.top = `${event.clientY}px`;
-
-  });
+  yearElement.textContent = new Date().getFullYear();
 
 }
+
+
+// =========================
+// PAGE LOAD
+// =========================
+
+window.addEventListener("load", () => {
+
+  document.body.classList.add("loaded");
+
+});
