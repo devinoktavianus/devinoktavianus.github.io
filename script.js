@@ -5,11 +5,14 @@
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
+
 if (menuBtn && navLinks) {
+
 
   menuBtn.addEventListener("click", () => {
 
     const isOpen = navLinks.classList.toggle("open");
+
 
     menuBtn.setAttribute(
       "aria-label",
@@ -19,50 +22,59 @@ if (menuBtn && navLinks) {
   });
 
 
-  document.querySelectorAll(".nav-links a").forEach((link) => {
+  document
+    .querySelectorAll(".nav-links a")
+    .forEach((link) => {
 
-    link.addEventListener("click", () => {
+      link.addEventListener("click", () => {
 
-      navLinks.classList.remove("open");
+        navLinks.classList.remove("open");
 
-      menuBtn.setAttribute(
-        "aria-label",
-        "Open menu"
-      );
+        menuBtn.setAttribute(
+          "aria-label",
+          "Open menu"
+        );
+
+      });
 
     });
 
-  });
-
 }
+
 
 
 // =========================
 // SCROLL REVEAL
 // =========================
 
-const revealElements = document.querySelectorAll(".reveal");
+const revealElements =
+  document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver(
-  (entries, observer) => {
 
-    entries.forEach((entry) => {
+const revealObserver =
+  new IntersectionObserver(
 
-      if (entry.isIntersecting) {
+    (entries, observer) => {
 
-        entry.target.classList.add("visible");
+      entries.forEach((entry) => {
 
-        observer.unobserve(entry.target);
+        if (entry.isIntersecting) {
 
-      }
+          entry.target.classList.add("visible");
 
-    });
+          observer.unobserve(entry.target);
 
-  },
-  {
-    threshold: 0.12
-  }
-);
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.12
+    }
+
+  );
 
 
 revealElements.forEach((element) => {
@@ -72,15 +84,19 @@ revealElements.forEach((element) => {
 });
 
 
+
 // =========================
 // NAVBAR SHADOW
 // =========================
 
-const navWrap = document.querySelector(".nav-wrap");
+const navWrap =
+  document.querySelector(".nav-wrap");
+
 
 window.addEventListener("scroll", () => {
 
   if (!navWrap) return;
+
 
   if (window.scrollY > 30) {
 
@@ -95,43 +111,58 @@ window.addEventListener("scroll", () => {
 });
 
 
+
 // =========================
 // ACTIVE NAVIGATION
 // =========================
 
-const sections = document.querySelectorAll("section[id]");
-const navItems = document.querySelectorAll(".nav-links a");
+const sections =
+  document.querySelectorAll("section[id]");
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
 
-    entries.forEach((entry) => {
+const navItems =
+  document.querySelectorAll(".nav-links a");
 
-      if (!entry.isIntersecting) return;
 
-      const currentId = entry.target.getAttribute("id");
+const sectionObserver =
+  new IntersectionObserver(
 
-      navItems.forEach((item) => {
+    (entries) => {
 
-        item.classList.remove("active");
+      entries.forEach((entry) => {
 
-        if (
-          item.getAttribute("href") === `#${currentId}`
-        ) {
+        if (!entry.isIntersecting) return;
 
-          item.classList.add("active");
 
-        }
+        const currentId =
+          entry.target.getAttribute("id");
+
+
+        navItems.forEach((item) => {
+
+          item.classList.remove("active");
+
+
+          if (
+            item.getAttribute("href") ===
+            `#${currentId}`
+          ) {
+
+            item.classList.add("active");
+
+          }
+
+        });
 
       });
 
-    });
+    },
 
-  },
-  {
-    threshold: 0.35
-  }
-);
+    {
+      threshold: 0.35
+    }
+
+  );
 
 
 sections.forEach((section) => {
@@ -141,17 +172,22 @@ sections.forEach((section) => {
 });
 
 
+
 // =========================
 // CURRENT YEAR
 // =========================
 
-const yearElement = document.getElementById("current-year");
+const yearElement =
+  document.getElementById("current-year");
+
 
 if (yearElement) {
 
-  yearElement.textContent = new Date().getFullYear();
+  yearElement.textContent =
+    new Date().getFullYear();
 
 }
+
 
 
 // =========================
