@@ -5,14 +5,11 @@
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-
 if (menuBtn && navLinks) {
-
 
   menuBtn.addEventListener("click", () => {
 
     const isOpen = navLinks.classList.toggle("open");
-
 
     menuBtn.setAttribute(
       "aria-label",
@@ -22,25 +19,22 @@ if (menuBtn && navLinks) {
   });
 
 
-  document
-    .querySelectorAll(".nav-links a")
-    .forEach((link) => {
+  document.querySelectorAll(".nav-links a").forEach((link) => {
 
-      link.addEventListener("click", () => {
+    link.addEventListener("click", () => {
 
-        navLinks.classList.remove("open");
+      navLinks.classList.remove("open");
 
-        menuBtn.setAttribute(
-          "aria-label",
-          "Open menu"
-        );
-
-      });
+      menuBtn.setAttribute(
+        "aria-label",
+        "Open menu"
+      );
 
     });
 
-}
+  });
 
+}
 
 
 // =========================
@@ -50,66 +44,46 @@ if (menuBtn && navLinks) {
 const revealElements =
   document.querySelectorAll(".reveal");
 
+if ("IntersectionObserver" in window) {
 
-const revealObserver =
-  new IntersectionObserver(
+  const revealObserver =
+    new IntersectionObserver(
+      (entries, observer) => {
 
-    (entries, observer) => {
+        entries.forEach((entry) => {
 
-      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
 
-        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
 
-          entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
 
-          observer.unobserve(entry.target);
+          }
 
-        }
+        });
 
-      });
-
-    },
-
-    {
-      threshold: 0.12
-    }
-
-  );
+      },
+      {
+        threshold: 0.12
+      }
+    );
 
 
-revealElements.forEach((element) => {
+  revealElements.forEach((element) => {
 
-  revealObserver.observe(element);
+    revealObserver.observe(element);
 
-});
+  });
 
+} else {
 
+  revealElements.forEach((element) => {
 
-// =========================
-// NAVBAR SHADOW
-// =========================
+    element.classList.add("visible");
 
-const navWrap =
-  document.querySelector(".nav-wrap");
+  });
 
-
-window.addEventListener("scroll", () => {
-
-  if (!navWrap) return;
-
-
-  if (window.scrollY > 30) {
-
-    navWrap.classList.add("scrolled");
-
-  } else {
-
-    navWrap.classList.remove("scrolled");
-
-  }
-
-});
-
+}
 
 
 // =========================
@@ -119,83 +93,117 @@ window.addEventListener("scroll", () => {
 const sections =
   document.querySelectorAll("section[id]");
 
-
 const navItems =
   document.querySelectorAll(".nav-links a");
 
 
-const sectionObserver =
-  new IntersectionObserver(
+if ("IntersectionObserver" in window) {
 
-    (entries) => {
+  const sectionObserver =
+    new IntersectionObserver(
+      (entries) => {
 
-      entries.forEach((entry) => {
+        entries.forEach((entry) => {
 
-        if (!entry.isIntersecting) return;
+          if (!entry.isIntersecting) return;
 
-
-        const currentId =
-          entry.target.getAttribute("id");
-
-
-        navItems.forEach((item) => {
-
-          item.classList.remove("active");
+          const currentId =
+            entry.target.getAttribute("id");
 
 
-          if (
-            item.getAttribute("href") ===
-            `#${currentId}`
-          ) {
+          navItems.forEach((item) => {
 
-            item.classList.add("active");
+            item.classList.toggle(
+              "active",
+              item.getAttribute("href") === `#${currentId}`
+            );
 
-          }
+          });
 
         });
 
-      });
-
-    },
-
-    {
-      threshold: 0.35
-    }
-
-  );
+      },
+      {
+        threshold: 0.35
+      }
+    );
 
 
-sections.forEach((section) => {
+  sections.forEach((section) => {
 
-  sectionObserver.observe(section);
+    sectionObserver.observe(section);
 
-});
-
-
-
-// =========================
-// CURRENT YEAR
-// =========================
-
-const yearElement =
-  document.getElementById("current-year");
-
-
-if (yearElement) {
-
-  yearElement.textContent =
-    new Date().getFullYear();
+  });
 
 }
 
 
+// =========================
+// CURSOR GLOW
+// =========================
+
+const cursorGlow =
+  document.querySelector(".cursor-glow");
+
+
+if (
+  cursorGlow &&
+  window.matchMedia("(pointer: fine)").matches
+) {
+
+  document.addEventListener(
+    "mousemove",
+    (event) => {
+
+      cursorGlow.style.left =
+        `${event.clientX}px`;
+
+      cursorGlow.style.top =
+        `${event.clientY}px`;
+
+    }
+  );
+
+}
+
 
 // =========================
-// PAGE LOAD
+// SMOOTH SCROLL
 // =========================
 
-window.addEventListener("load", () => {
+document
+  .querySelectorAll('a[href^="#"]')
+  .forEach((link) => {
 
-  document.body.classList.add("loaded");
+    link.addEventListener(
+      "click",
+      (event) => {
 
-});
+        const targetId =
+          link.getAttribute("href");
+
+        if (
+          !targetId ||
+          targetId === "#"
+        ) {
+          return;
+        }
+
+        const target =
+          document.querySelector(targetId);
+
+        if (target) {
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+
+      }
+    );
+
+  });
