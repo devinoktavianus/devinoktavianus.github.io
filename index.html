@@ -56,10 +56,7 @@
 
   <main>
 
-    <!-- =========================
-         HERO
-    ========================== -->
-
+    <!-- HERO -->
     <section class="hero container" id="home">
 
       <div class="hero-copy reveal">
@@ -110,17 +107,30 @@
         <div class="photo-orbit orbit-one"></div>
         <div class="photo-orbit orbit-two"></div>
 
-        <div class="photo-card">
+        <!-- CIRCULAR PHOTO -->
+        <div
+          class="photo-card"
+          style="
+            width:min(410px,78vw);
+            height:min(410px,78vw);
+            border-radius:50%;
+            overflow:hidden;
+            transform:none;
+          "
+        >
 
           <img
             src="profile.jpg"
             alt="Portrait of Devin Oktavianus"
+            style="
+              width:100%;
+              height:100%;
+              object-fit:cover;
+              object-position:center top;
+              border-radius:50%;
+              display:block;
+            "
           />
-
-          <div class="photo-caption">
-            <span>Devin Oktavianus</span>
-            <small>Student · Organizer · Curious learner</small>
-          </div>
 
         </div>
 
@@ -185,9 +195,7 @@
     </section>
 
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
+    <!-- ABOUT -->
 
     <section class="section container" id="about">
 
@@ -251,7 +259,6 @@
         <!-- RIGHT SIDE -->
 
         <div class="about-side reveal delay-1">
-
 
           <!-- TECHNICAL SKILLS -->
 
@@ -413,9 +420,7 @@
 
         <div>
 
-          <span>
-            01
-          </span>
+          <span>01</span>
 
           <strong>
             Data Analytics
@@ -430,9 +435,7 @@
 
         <div>
 
-          <span>
-            02
-          </span>
+          <span>02</span>
 
           <strong>
             Business Intelligence
@@ -447,9 +450,7 @@
 
         <div>
 
-          <span>
-            03
-          </span>
+          <span>03</span>
 
           <strong>
             Business Analysis
@@ -466,9 +467,7 @@
     </section>
 
 
-    <!-- =========================
-         EXPERIENCE
-    ========================== -->
+    <!-- EXPERIENCE -->
 
     <section
       class="section experience-section"
@@ -499,8 +498,6 @@
 
         <div class="timeline">
 
-
-          <!-- 01 -->
 
           <article class="timeline-item reveal">
 
@@ -548,8 +545,6 @@
           </article>
 
 
-          <!-- 02 -->
-
           <article class="timeline-item reveal">
 
             <div class="timeline-dot"></div>
@@ -594,8 +589,6 @@
 
           </article>
 
-
-          <!-- 03 -->
 
           <article class="timeline-item reveal">
 
@@ -644,8 +637,6 @@
           </article>
 
 
-          <!-- 04 -->
-
           <article class="timeline-item reveal">
 
             <div class="timeline-dot"></div>
@@ -690,8 +681,6 @@
 
           </article>
 
-
-          <!-- 05 -->
 
           <article class="timeline-item reveal">
 
@@ -738,8 +727,6 @@
           </article>
 
 
-          <!-- 06 -->
-
           <article class="timeline-item reveal">
 
             <div class="timeline-dot"></div>
@@ -785,8 +772,6 @@
           </article>
 
 
-          <!-- 07 -->
-
           <article class="timeline-item reveal">
 
             <div class="timeline-dot"></div>
@@ -830,8 +815,6 @@
 
           </article>
 
-
-          <!-- 08 -->
 
           <article class="timeline-item reveal">
 
@@ -879,8 +862,6 @@
           </article>
 
 
-          <!-- 09 -->
-
           <article class="timeline-item reveal">
 
             <div class="timeline-dot"></div>
@@ -926,8 +907,6 @@
           </article>
 
 
-          <!-- 10 -->
-
           <article class="timeline-item reveal">
 
             <div class="timeline-dot"></div>
@@ -971,7 +950,6 @@
 
           </article>
 
-
         </div>
 
       </div>
@@ -979,9 +957,7 @@
     </section>
 
 
-    <!-- =========================
-         PROJECTS
-    ========================== -->
+    <!-- PROJECTS -->
 
     <section
       class="section container"
@@ -1037,9 +1013,7 @@
     </section>
 
 
-    <!-- =========================
-         CONNECT
-    ========================== -->
+    <!-- CONNECT -->
 
     <section
       class="section connect-section"
