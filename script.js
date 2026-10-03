@@ -1,6 +1,6 @@
-// =========================
-// MOBILE MENU
-// =========================
+/* =========================================
+   MOBILE MENU
+========================================= */
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
@@ -19,132 +19,99 @@ if (menuBtn && navLinks) {
   });
 
 
-  document.querySelectorAll(".nav-links a").forEach((link) => {
+  document
+    .querySelectorAll(".nav-links a")
+    .forEach((link) => {
 
-    link.addEventListener("click", () => {
+      link.addEventListener("click", () => {
 
-      navLinks.classList.remove("open");
+        navLinks.classList.remove("open");
 
-      menuBtn.setAttribute(
-        "aria-label",
-        "Open menu"
-      );
+        menuBtn.setAttribute(
+          "aria-label",
+          "Open menu"
+        );
+
+      });
 
     });
 
-  });
-
 }
 
 
-// =========================
-// SCROLL REVEAL
-// =========================
+/* =========================================
+   NAVBAR SCROLL
+========================================= */
 
-const revealElements =
-  document.querySelectorAll(".reveal");
+const navWrap = document.querySelector(".nav-wrap");
 
-if ("IntersectionObserver" in window) {
+window.addEventListener("scroll", () => {
 
-  const revealObserver =
-    new IntersectionObserver(
-      (entries, observer) => {
+  if (!navWrap) return;
 
-        entries.forEach((entry) => {
+  if (window.scrollY > 30) {
+    navWrap.classList.add("scrolled");
+  } else {
+    navWrap.classList.remove("scrolled");
+  }
 
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-            observer.unobserve(entry.target);
-
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.12
-      }
-    );
+});
 
 
-  revealElements.forEach((element) => {
+/* =========================================
+   ACTIVE NAVIGATION
+========================================= */
 
-    revealObserver.observe(element);
+const sections = document.querySelectorAll(
+  "section[id]"
+);
 
-  });
+const navItems = document.querySelectorAll(
+  ".nav-links a"
+);
 
-} else {
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
 
-  revealElements.forEach((element) => {
+    entries.forEach((entry) => {
 
-    element.classList.add("visible");
+      if (!entry.isIntersecting) return;
 
-  });
+      const currentId =
+        entry.target.getAttribute("id");
 
-}
+      navItems.forEach((item) => {
 
+        item.classList.remove("active");
 
-// =========================
-// ACTIVE NAVIGATION
-// =========================
+        if (
+          item.getAttribute("href") ===
+          `#${currentId}`
+        ) {
+          item.classList.add("active");
+        }
 
-const sections =
-  document.querySelectorAll("section[id]");
+      });
 
-const navItems =
-  document.querySelectorAll(".nav-links a");
+    });
 
+  },
+  {
+    threshold: 0.35
+  }
+);
 
-if ("IntersectionObserver" in window) {
-
-  const sectionObserver =
-    new IntersectionObserver(
-      (entries) => {
-
-        entries.forEach((entry) => {
-
-          if (!entry.isIntersecting) return;
-
-          const currentId =
-            entry.target.getAttribute("id");
-
-
-          navItems.forEach((item) => {
-
-            item.classList.toggle(
-              "active",
-              item.getAttribute("href") === `#${currentId}`
-            );
-
-          });
-
-        });
-
-      },
-      {
-        threshold: 0.35
-      }
-    );
+sections.forEach((section) => {
+  sectionObserver.observe(section);
+});
 
 
-  sections.forEach((section) => {
-
-    sectionObserver.observe(section);
-
-  });
-
-}
-
-
-// =========================
-// CURSOR GLOW
-// =========================
+/* =========================================
+   CURSOR GLOW
+========================================= */
 
 const cursorGlow =
   document.querySelector(".cursor-glow");
-
 
 if (
   cursorGlow &&
@@ -167,43 +134,35 @@ if (
 }
 
 
-// =========================
-// SMOOTH SCROLL
-// =========================
+/* =========================================
+   SIMPLE REVEAL
+========================================= */
 
-document
-  .querySelectorAll('a[href^="#"]')
-  .forEach((link) => {
+const revealElements =
+  document.querySelectorAll(
+    ".about, .experience, .projects, .connect"
+  );
 
-    link.addEventListener(
-      "click",
-      (event) => {
+const revealObserver =
+  new IntersectionObserver(
+    (entries, observer) => {
 
-        const targetId =
-          link.getAttribute("href");
+      entries.forEach((entry) => {
 
-        if (
-          !targetId ||
-          targetId === "#"
-        ) {
-          return;
-        }
+        if (!entry.isIntersecting) return;
 
-        const target =
-          document.querySelector(targetId);
+        entry.target.classList.add("visible");
 
-        if (target) {
+        observer.unobserve(entry.target);
 
-          event.preventDefault();
+      });
 
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
+    },
+    {
+      threshold: 0.08
+    }
+  );
 
-        }
-
-      }
-    );
-
-  });
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
