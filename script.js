@@ -6,22 +6,17 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 
 if (menuToggle && navMenu) {
-
   menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("open");
   });
 
-
   const navLinks = document.querySelectorAll(".nav-link");
 
   navLinks.forEach((link) => {
-
     link.addEventListener("click", () => {
       navMenu.classList.remove("open");
     });
-
   });
-
 }
 
 
@@ -33,19 +28,15 @@ const sections = document.querySelectorAll("section[id]");
 const navigationLinks = document.querySelectorAll(".nav-link");
 
 if (sections.length && navigationLinks.length) {
-
   const observerOptions = {
     root: null,
     rootMargin: "-35% 0px -55% 0px",
     threshold: 0
   };
 
-
   const sectionObserver = new IntersectionObserver(
     (entries) => {
-
       entries.forEach((entry) => {
-
         if (!entry.isIntersecting) {
           return;
         }
@@ -53,7 +44,6 @@ if (sections.length && navigationLinks.length) {
         const currentId = entry.target.getAttribute("id");
 
         navigationLinks.forEach((link) => {
-
           link.classList.remove("active");
 
           const href = link.getAttribute("href");
@@ -61,20 +51,15 @@ if (sections.length && navigationLinks.length) {
           if (href === `#${currentId}`) {
             link.classList.add("active");
           }
-
         });
-
       });
-
     },
     observerOptions
   );
 
-
   sections.forEach((section) => {
     sectionObserver.observe(section);
   });
-
 }
 
 
@@ -86,27 +71,19 @@ if (sections.length && navigationLinks.length) {
 const projectItems = document.querySelectorAll(".project-item");
 
 if (projectItems.length) {
-
   projectItems.forEach((item) => {
-
     item.addEventListener("toggle", () => {
-
       if (!item.open) {
         return;
       }
 
       projectItems.forEach((otherItem) => {
-
         if (otherItem !== item) {
           otherItem.removeAttribute("open");
         }
-
       });
-
     });
-
   });
-
 }
 
 
@@ -117,9 +94,7 @@ if (projectItems.length) {
 const internalLinks = document.querySelectorAll('a[href^="#"]');
 
 internalLinks.forEach((link) => {
-
   link.addEventListener("click", (event) => {
-
     const targetId = link.getAttribute("href");
 
     if (!targetId || targetId === "#") {
@@ -138,9 +113,7 @@ internalLinks.forEach((link) => {
       behavior: "smooth",
       block: "start"
     });
-
   });
-
 });
 
 
@@ -148,24 +121,20 @@ internalLinks.forEach((link) => {
    PROJECT SUMMARY ACCESSIBILITY
 ========================================================= */
 
-const projectSummaries = document.querySelectorAll(".project-item summary");
+const projectSummaries = document.querySelectorAll(
+  ".project-item summary"
+);
 
 projectSummaries.forEach((summary) => {
-
   summary.addEventListener("keydown", (event) => {
-
     if (event.key === "Enter" || event.key === " ") {
-
       event.preventDefault();
 
       const parent = summary.parentElement;
 
       parent.open = !parent.open;
-
     }
-
   });
-
 });
 
 
@@ -174,7 +143,6 @@ projectSummaries.forEach((summary) => {
 ========================================================= */
 
 document.addEventListener("click", (event) => {
-
   if (!menuToggle || !navMenu) {
     return;
   }
@@ -192,7 +160,6 @@ document.addEventListener("click", (event) => {
   ) {
     navMenu.classList.remove("open");
   }
-
 });
 
 
@@ -201,7 +168,6 @@ document.addEventListener("click", (event) => {
 ========================================================= */
 
 window.addEventListener("load", () => {
-
   /*
     Intentionally no reveal animation here.
 
@@ -211,5 +177,4 @@ window.addEventListener("load", () => {
   */
 
   document.body.classList.add("loaded");
-
 });
