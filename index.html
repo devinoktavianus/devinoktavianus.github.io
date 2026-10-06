@@ -8,1627 +8,1510 @@
 
     <meta
         name="description"
-        content="Portfolio of Devin Oktavianus, an Information Systems student interested in Data Analysis, Business Analysis, and Business Intelligence."
+        content="Devin Oktavianus — Information Systems student at BINUS University interested in Data Analysis, Business Analysis, and Business Intelligence."
     >
 
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-    <!-- =====================================================
-         NAVIGATION
-    ====================================================== -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
-    <header class="navbar">
+<header class="navbar">
+    <a href="#home" class="brand">DO.</a>
 
-        <a href="#home" class="nav-logo">
-            DO.
-        </a>
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#connect">Connect</a>
+    </nav>
 
-        <nav class="nav-menu">
-
-            <a href="#home" class="nav-link active">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#connect" class="nav-link">Connect</a>
-
-        </nav>
-
-        <button class="mobile-menu-button" id="mobileMenuButton">
-            <span></span>
-            <span></span>
-        </button>
-
-    </header>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+    </button>
+</header>
 
 
-    <main>
+<main>
 
+<!-- =========================
+     HOME
+========================= -->
 
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
+<section class="hero section" id="home">
 
-        <section class="hero-section" id="home">
+    <div class="hero-grid">
 
-            <!-- decorative elements -->
+        <div class="hero-content reveal">
 
-            <span class="hero-dot hero-dot-one"></span>
-            <span class="hero-dot hero-dot-two"></span>
-            <span class="hero-dot hero-dot-three"></span>
-
-            <span class="hero-star hero-star-one">✦</span>
-            <span class="hero-star hero-star-two">✦</span>
-
-            <span class="hero-bubble hero-bubble-one"></span>
-            <span class="hero-bubble hero-bubble-two"></span>
-
-            <div class="hero-grid"></div>
-
-
-            <div class="hero-content">
-
-                <div class="hero-text">
-
-                    <div class="hero-eyebrow">
-                        BINUS UNIVERSITY · INFORMATION SYSTEMS STUDENT
-                    </div>
-
-                    <h1>
-                        Hi, I'm
-                        <span>Devin.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        I enjoy working with data, understanding how things
-                        work, and turning ideas into something useful.
-                    </p>
-
-                    <div class="hero-tags">
-
-                        <span>DATA ANALYSIS</span>
-                        <span>BUSINESS ANALYSIS</span>
-                        <span>BUSINESS INTELLIGENCE</span>
-                        <span>INFORMATION SYSTEMS</span>
-
-                    </div>
-
-                    <div class="hero-actions">
-
-                        <a href="#projects" class="primary-button">
-                            VIEW MY WORK
-                            <span>↗</span>
-                        </a>
-
-                        <a href="#connect" class="secondary-button">
-                            LET'S CONNECT
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROFILE -->
-
-                <div class="hero-visual">
-
-                    <div class="orbit orbit-one"></div>
-                    <div class="orbit orbit-two"></div>
-                    <div class="orbit orbit-three"></div>
-
-                    <span class="visual-dot visual-dot-one"></span>
-                    <span class="visual-dot visual-dot-two"></span>
-                    <span class="visual-star">✦</span>
-
-                    <div class="profile-frame">
-
-                        <img
-                            src="profile.jpg"
-                            alt="Devin Oktavianus"
-                        >
-
-                    </div>
-
-                </div>
-
+            <div class="eyebrow">
+                BINUS UNIVERSITY · INFORMATION SYSTEMS STUDENT
             </div>
 
+            <h1>
+                Hi, I'm
+                <span>Devin.</span>
+            </h1>
 
-            <!-- scrolling label -->
+            <p class="hero-description">
+                I enjoy working with data, understanding how things work,
+                and turning ideas into something useful.
+            </p>
 
-            <div class="hero-marquee">
-
-                <div class="marquee-track">
-
-                    <span>DATA ANALYTICS</span>
-                    <i>✦</i>
-
-                    <span>DATA VISUALIZATION</span>
-                    <i>✦</i>
-
-                    <span>BUSINESS ANALYSIS</span>
-                    <i>✦</i>
-
-                    <span>INFORMATION SYSTEMS</span>
-                    <i>✦</i>
-
-                    <span>SQL & EXCEL</span>
-                    <i>✦</i>
-
-                    <span>DATA ANALYTICS</span>
-                    <i>✦</i>
-
-                    <span>DATA VISUALIZATION</span>
-                    <i>✦</i>
-
-                    <span>BUSINESS ANALYSIS</span>
-                    <i>✦</i>
-
-                </div>
-
+            <div class="hero-tags">
+                <span>DATA ANALYSIS</span>
+                <span>BUSINESS ANALYSIS</span>
+                <span>BUSINESS INTELLIGENCE</span>
+                <span>INFORMATION SYSTEMS</span>
             </div>
 
-        </section>
-
-
-
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
-
-        <section class="about-section section-padding" id="about">
-
-            <div class="section-label">
-                <span>01</span>
-                ABOUT
-            </div>
-
-
-            <div class="about-layout">
-
-                <div class="about-heading">
-
-                    <span class="section-kicker">
-                        A LITTLE ABOUT ME
-                    </span>
-
-                    <h2>
-                        Just a student who enjoys working with data.
-                    </h2>
-
-                    <span class="about-small-line">
-                        Still learning, still figuring things out.
-                    </span>
-
-                </div>
-
-
-                <div class="about-story">
-
-                    <p>
-                        I am an Information Systems student at BINUS University
-                        with an interest in Data Analysis, Business Analysis,
-                        and Business Intelligence.
-                    </p>
-
-                    <p>
-                        When I first chose the Business Intelligence track,
-                        I did not really know what to expect. As I explored
-                        different subjects, I started to enjoy working with
-                        data, especially when it involved Excel, dashboards,
-                        and data visualization.
-                    </p>
-
-                    <p>
-                        From there, I started exploring tools such as Tableau,
-                        Power BI, SQL, Python, and Oracle. I enjoy the process
-                        of taking something that initially looks like a lot
-                        of numbers and turning it into information that is
-                        easier to understand.
-                    </p>
-
-                    <p>
-                        Outside academics, I have also been active in
-                        HIMSISFO BINUS University. Being involved in different
-                        divisions and events pushed me outside my comfort zone.
-                        I started from an activist role, later became a
-                        Vice Coordinator, and eventually took the role of
-                        Project Manager for one of the organization's programs.
-                    </p>
-
-                    <p>
-                        I am still exploring where I want to go next, but
-                        right now I am most interested in opportunities where
-                        I can combine data, business, and technology.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- ABOUT DETAILS -->
-
-            <div class="about-details">
-
-                <div class="detail-item">
-
-                    <span class="detail-title">
-                        GPA
-                    </span>
-
-                    <strong>3.44 / 4.00</strong>
-
-                </div>
-
-
-                <div class="detail-item">
-
-                    <span class="detail-title">
-                        LANGUAGES
-                    </span>
-
-                    <strong>Indonesian · English</strong>
-
-                </div>
-
-
-                <div class="detail-item">
-
-                    <span class="detail-title">
-                        BEYOND DATA
-                    </span>
-
-                    <strong>Watching · Gaming · Sports</strong>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             SKILLS
-        ====================================================== -->
-
-        <section class="skills-section section-padding">
-
-            <div class="section-label">
-                <span>02</span>
-                SKILLS
-            </div>
-
-
-            <div class="skills-heading">
-
-                <span class="section-kicker">
-                    WHAT I USE
-                </span>
-
-                <h2>
-                    MY SKILLS
-                </h2>
-
-            </div>
-
-
-            <div class="skills-grid">
-
-                <div class="skill-card">
-
-                    <span class="skill-number">01</span>
-
-                    <div class="skill-symbol">EX</div>
-
-                    <h3>Microsoft Excel</h3>
-
-                    <p>
-                        Data cleaning, analysis, formulas, Pivot Tables,
-                        and data preparation.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <span class="skill-number">02</span>
-
-                    <div class="skill-symbol">TB</div>
-
-                    <h3>Tableau</h3>
-
-                    <p>
-                        Interactive dashboards and visual storytelling
-                        from structured datasets.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <span class="skill-number">03</span>
-
-                    <div class="skill-symbol">SQL</div>
-
-                    <h3>SQL</h3>
-
-                    <p>
-                        Working with databases, queries, filtering,
-                        joins, and data retrieval.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <span class="skill-number">04</span>
-
-                    <div class="skill-symbol">BI</div>
-
-                    <h3>Power BI</h3>
-
-                    <p>
-                        Data modeling and dashboard development for
-                        business-oriented analysis.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <span class="skill-number">05</span>
-
-                    <div class="skill-symbol">PY</div>
-
-                    <h3>Python</h3>
-
-                    <p>
-                        Exploring data and building a foundation in
-                        programming for data-related work.
-                    </p>
-
-                </div>
-
-
-                <div class="skill-card">
-
-                    <span class="skill-number">06</span>
-
-                    <div class="skill-symbol">OR</div>
-
-                    <h3>Oracle Database</h3>
-
-                    <p>
-                        Database management, SQL, and working with
-                        relational data.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             EXPERIENCE
-        ====================================================== -->
-
-        <section class="experience-section section-padding" id="experience">
-
-            <div class="section-label">
-                <span>03</span>
-                EXPERIENCE
-            </div>
-
-
-            <div class="experience-heading">
-
-                <div>
-
-                    <span class="section-kicker">
-                        MY JOURNEY
-                    </span>
-
-                    <h2>
-                        Growing through different roles.
-                    </h2>
-
-                </div>
-
-                <p>
-                    From supporting small tasks to taking responsibility
-                    for larger programs, each experience taught me something
-                    different.
-                </p>
-
-            </div>
-
-
-            <!-- EXPERIENCE TIMELINE -->
-
-            <div class="experience-timeline">
-
-                <div class="experience-line"></div>
-
-
-                <!-- 01 -->
-
-                <article class="experience-node node-01">
-
-                    <div class="experience-date">
-                        FEB 2025
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-role">
-                            ACTIVIST
-                        </span>
-
-                        <h3>
-                            Human Resource Development
-                        </h3>
-
-                        <h4>
-                            HIMSISFO BINUS University
-                        </h4>
-
-                        <span class="experience-period">
-                            Feb 2025 — Feb 2026
-                        </span>
-
-                        <p>
-                            Supported HRD activities and contributed to
-                            internal programs and member development
-                            within HIMSISFO.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 02 -->
-
-                <article class="experience-node node-02">
-
-                    <div class="experience-date">
-                        MAR 2025
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-role">
-                            VICE COORDINATOR
-                        </span>
-
-                        <h3>
-                            Equipment Division
-                        </h3>
-
-                        <h4>
-                            Company Visit HIMSISFO 2025: ADIWIDIA
-                        </h4>
-
-                        <span class="experience-period">
-                            Mar 2025 — Jul 2025
-                        </span>
-
-                        <p>
-                            Coordinated equipment and logistics while
-                            communicating with the company and internal
-                            divisions to support smooth event execution.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 03 -->
-
-                <article class="experience-node node-03">
-
-                    <div class="experience-date">
-                        APR 2025
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-role">
-                            SUPPORT DIVISION STAFF
-                        </span>
-
-                        <h3>
-                            Expo & Welcoming Party
-                        </h3>
-
-                        <h4>
-                            HIMSISFO 2025: VENTURE
-                        </h4>
-
-                        <span class="experience-period">
-                            Apr 2025 — Sep 2025
-                        </span>
-
-                        <p>
-                            Supported event preparation and execution
-                            by coordinating operational needs with
-                            other divisions.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 04 -->
-
-                <article class="experience-node node-04">
-
-                    <div class="experience-date">
-                        MAY 2025
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-role">
-                            VOLUNTEER · NOTULIS
-                        </span>
-
-                        <h3>
-                            SELCAVIS
-                        </h3>
-
-                        <h4>
-                            HIMSISFO 2025: PRODIGI
-                        </h4>
-
-                        <span class="experience-period">
-                            Oct 2025
-                        </span>
-
-                        <p>
-                            Supported the event as a volunteer notulis,
-                            helping document important discussions and
-                            activities.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 05 -->
-
-                <article class="experience-node node-05">
-
-                    <div class="experience-date">
-                        MAY 2025
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-role">
-                            VOLUNTEER
-                        </span>
-
-                        <h3>
-                            NAKAMA.id HUB
-                        </h3>
-
-                        <h4>
-                            NAKAMA x Meta Tech Partner Event
-                        </h4>
-
-                        <span class="experience-period">
-                            May 2025
-                        </span>
-
-                        <p>
-                            Supported the event team during the NAKAMA
-                            x Meta Tech Partner event.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 06 -->
-
-                <article class="experience-node node-06">
-
-                    <div class="experience-date">
-                        JUN 2025
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-role">
-                            VICE COORDINATOR
-                        </span>
-
-                        <h3>
-                            Equipment Division
-                        </h3>
-
-                        <h4>
-                            LDKK Aktivis HIMSISFO 2026: IGNITE
-                        </h4>
-
-                        <span class="experience-period">
-                            Jun 2025 — Dec 2025
-                        </span>
-
-                        <p>
-                            Coordinated equipment and logistical preparation
-                            to support the event and work across divisions.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 07 -->
-
-                <article class="experience-node node-07">
-
-                    <div class="experience-date">
-                        FEB 2026
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card featured-experience">
-
-                        <span class="experience-role">
-                            PROJECT MANAGER
-                        </span>
-
-                        <h3>
-                            GERAK HIMSISFO 2026: VIBEZ
-                        </h3>
-
-                        <h4>
-                            HIMSISFO BINUS University
-                        </h4>
-
-                        <span class="experience-period">
-                            Feb 2026 — May 2026
-                        </span>
-
-                        <p>
-                            Led the planning and execution of VIBEZ while
-                            coordinating divisions and ensuring the event
-                            objectives were achieved.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 08 -->
-
-                <article class="experience-node node-08">
-
-                    <div class="experience-date">
-                        FEB 2026
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-role">
-                            STAFF
-                        </span>
-
-                        <h3>
-                            Human Resource Development
-                        </h3>
-
-                        <h4>
-                            HIMSISFO BINUS University
-                        </h4>
-
-                        <span class="experience-period">
-                            Feb 2026 — Present
-                        </span>
-
-                        <p>
-                            Continue contributing to HRD programs and
-                            supporting organizational activities and
-                            member development.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 09 -->
-
-                <article class="experience-node node-09">
-
-                    <div class="experience-date">
-                        MAR 2026
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-role">
-                            EQUIPMENT DIVISION STAFF
-                        </span>
-
-                        <h3>
-                            LDKCP HIMSISFO 2026: LUNAR
-                        </h3>
-
-                        <h4>
-                            HIMSISFO BINUS University
-                        </h4>
-
-                        <span class="experience-period">
-                            Mar 2026 — Sep 2026
-                        </span>
-
-                        <p>
-                            Supported equipment preparation and logistical
-                            needs throughout the LDKCP event.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- 10 -->
-
-                <article class="experience-node node-10">
-
-                    <div class="experience-date">
-                        SEP 2026
-                    </div>
-
-                    <div class="experience-point">
-                        <span></span>
-                    </div>
-
-                    <div class="experience-card">
-
-                        <span class="experience-role">
-                            VOLUNTEER
-                        </span>
-
-                        <h3>
-                            Greener Day 2026
-                        </h3>
-
-                        <h4>
-                            Teach For Indonesia
-                        </h4>
-
-                        <span class="experience-period">
-                            Sep 2026
-                        </span>
-
-                        <p>
-                            Participated as a volunteer in the Greener Day
-                            2026 community activity.
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-
-            <!-- LINKEDIN CTA -->
-
-            <div class="experience-linkedin">
-
-                <span class="linkedin-line"></span>
-
-                <p>
-                    Want to know more about my experience?
-                </p>
-
-                <a
-                    href="https://www.linkedin.com/in/devinoktavianus-09a71343a"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    CHECK OUT MY LINKEDIN ↗
+            <div class="hero-actions">
+                <a href="#projects" class="primary-button">
+                    VIEW MY WORK ↗
                 </a>
 
-                <span class="linkedin-line"></span>
-
+                <a href="#connect" class="text-button">
+                    LET'S CONNECT
+                </a>
             </div>
 
-        </section>
+        </div>
 
 
+        <div class="hero-visual reveal">
 
-        <!-- =====================================================
-             PROJECTS
-        ====================================================== -->
+            <div class="decor decor-dot dot-one"></div>
+            <div class="decor decor-dot dot-two"></div>
+            <div class="decor decor-dot dot-three"></div>
 
-        <section class="projects-section section-padding" id="projects">
+            <div class="decor decor-star star-one">✦</div>
+            <div class="decor decor-star star-two">✦</div>
 
-            <div class="section-label">
-                <span>04</span>
-                PROJECTS
-            </div>
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
 
+            <div class="profile-wrapper">
+                <div class="profile-ring"></div>
 
-            <div class="projects-heading">
-
-                <div>
-
-                    <span class="section-kicker">
-                        SELECTED WORK
-                    </span>
-
-                    <h2>
-                        Things I've worked on.
-                    </h2>
-
+                <div class="profile-image">
+                    <img src="profile.jpg" alt="Devin Oktavianus">
                 </div>
-
-                <p>
-                    Academic projects where I explored UI/UX, programming,
-                    data, business, and research.
-                </p>
-
-            </div>
-
-
-            <!-- PROJECT TIMELINE -->
-
-            <div class="project-timeline">
-
-                <div class="project-line"></div>
-
-
-                <!-- PROJECT 01 -->
-
-                <article class="project-node project-top">
-
-                    <div class="project-date">
-                        S1
-                    </div>
-
-                    <div class="project-point">
-                        <span>01</span>
-                    </div>
-
-                    <div class="project-card">
-
-                        <div class="project-meta">
-                            UI/UX
-                        </div>
-
-                        <h3>
-                            Gym Junkie
-                        </h3>
-
-                        <p>
-                            A mobile fitness application designed to help
-                            users manage workout goals, calorie tracking,
-                            progress, and other fitness needs.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Figma</span>
-                            <span>UI/UX</span>
-                            <span>User Research</span>
-                        </div>
-
-                        <button
-                            class="project-button"
-                            data-project="gym-junkie"
-                        >
-                            VIEW PROJECT ↗
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 02 -->
-
-                <article class="project-node project-bottom">
-
-                    <div class="project-date">
-                        S1
-                    </div>
-
-                    <div class="project-point">
-                        <span>02</span>
-                    </div>
-
-                    <div class="project-card">
-
-                        <div class="project-meta">
-                            UI/UX LAB
-                        </div>
-
-                        <h3>
-                            Lively
-                        </h3>
-
-                        <p>
-                            A mobile application concept designed to make
-                            users more comfortable appearing on camera
-                            during live streaming.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Figma</span>
-                            <span>UI/UX</span>
-                            <span>Business Case</span>
-                        </div>
-
-                        <button
-                            class="project-button"
-                            data-project="lively"
-                        >
-                            VIEW PROJECT ↗
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- S2 GAP -->
-
-                <div class="project-semester-gap">
-                    S2
-                </div>
-
-
-                <!-- PROJECT 03 -->
-
-                <article class="project-node project-top">
-
-                    <div class="project-date">
-                        S3
-                    </div>
-
-                    <div class="project-point">
-                        <span>03</span>
-                    </div>
-
-                    <div class="project-card">
-
-                        <div class="project-meta">
-                            PROGRAMMING FOR BUSINESS
-                        </div>
-
-                        <h3>
-                            Tripiora
-                        </h3>
-
-                        <p>
-                            An all-in-one travel website concept combining
-                            flights, hotels, travel packages, destinations,
-                            and travel assistance.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Figma</span>
-                            <span>Web App</span>
-                            <span>PFB</span>
-                        </div>
-
-                        <button
-                            class="project-button"
-                            data-project="tripiora"
-                        >
-                            VIEW PROJECT ↗
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 04 -->
-
-                <article class="project-node project-bottom">
-
-                    <div class="project-date">
-                        S3
-                    </div>
-
-                    <div class="project-point">
-                        <span>04</span>
-                    </div>
-
-                    <div class="project-card coming-soon-card">
-
-                        <div class="project-meta">
-                            DATA & INFORMATION MANAGEMENT
-                        </div>
-
-                        <h3>
-                            Data & Information Management
-                        </h3>
-
-                        <p>
-                            Academic project focused on data and information
-                            management. Documentation will be added soon.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Data Management</span>
-                            <span>Coming Soon</span>
-                        </div>
-
-                        <span class="coming-soon">
-                            COMING SOON
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 05 -->
-
-                <article class="project-node project-top">
-
-                    <div class="project-date">
-                        S4
-                    </div>
-
-                    <div class="project-point">
-                        <span>05</span>
-                    </div>
-
-                    <div class="project-card">
-
-                        <div class="project-meta">
-                            DATA MODELING
-                        </div>
-
-                        <h3>
-                            Data Modeling
-                        </h3>
-
-                        <p>
-                            A group project using the School Grades &
-                            Demographic dataset, focusing on data cleaning,
-                            preparation, and modeling.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Data Modeling</span>
-                            <span>Data Cleaning</span>
-                            <span>Oracle</span>
-                        </div>
-
-                        <button
-                            class="project-button"
-                            data-project="data-modeling"
-                        >
-                            VIEW PROJECT ↗
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 06 -->
-
-                <article class="project-node project-bottom">
-
-                    <div class="project-date">
-                        S4
-                    </div>
-
-                    <div class="project-point">
-                        <span>06</span>
-                    </div>
-
-                    <div class="project-card">
-
-                        <div class="project-meta">
-                            DATA VISUALIZATION
-                        </div>
-
-                        <h3>
-                            Data Visualization
-                        </h3>
-
-                        <p>
-                            A data project where I cleaned raw Excel data,
-                            built Power Pivot, explored the dataset,
-                            and created a Tableau dashboard.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Excel</span>
-                            <span>Power Pivot</span>
-                            <span>Tableau</span>
-                        </div>
-
-                        <button
-                            class="project-button"
-                            data-project="data-visualization"
-                        >
-                            VIEW PROJECT ↗
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 07 -->
-
-                <article class="project-node project-top">
-
-                    <div class="project-date">
-                        S4
-                    </div>
-
-                    <div class="project-point">
-                        <span>07</span>
-                    </div>
-
-                    <div class="project-card">
-
-                        <div class="project-meta">
-                            CREATIVITY & INNOVATION
-                        </div>
-
-                        <h3>
-                            WeSkill
-                        </h3>
-
-                        <p>
-                            A career development and recruitment platform
-                            concept connecting learning, assessment,
-                            skills, and job opportunities.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Figma</span>
-                            <span>UI/UX</span>
-                            <span>Business Idea</span>
-                        </div>
-
-                        <button
-                            class="project-button"
-                            data-project="weskill"
-                        >
-                            VIEW PROJECT ↗
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- PROJECT 08 -->
-
-                <article class="project-node project-bottom">
-
-                    <div class="project-date">
-                        S4
-                    </div>
-
-                    <div class="project-point">
-                        <span>08</span>
-                    </div>
-
-                    <div class="project-card">
-
-                        <div class="project-meta">
-                            RESEARCH METHODS IN IS
-                        </div>
-
-                        <h3>
-                            Healthcare Chatbot Trust Research
-                        </h3>
-
-                        <p>
-                            A quantitative research project studying factors
-                            that influence user trust and continuance
-                            intention toward healthcare chatbots.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Research</span>
-                            <span>SEM-PLS</span>
-                            <span>AI Chatbot</span>
-                        </div>
-
-                        <button
-                            class="project-button"
-                            data-project="healthcare-chatbot"
-                        >
-                            VIEW PROJECT ↗
-                        </button>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-
-            <div class="projects-note">
-
-                <span></span>
-
-                <p>
-                    More projects will be added as I continue learning
-                    and building.
-                </p>
-
-                <span></span>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CONNECT
-        ====================================================== -->
-
-        <section class="connect-section section-padding" id="connect">
-
-            <div class="section-label">
-                <span>05</span>
-                CONNECT
-            </div>
-
-
-            <div class="connect-layout">
-
-                <div class="connect-heading">
-
-                    <span class="section-kicker">
-                        LET'S CONNECT
-                    </span>
-
-                    <h2>
-                        Have something<br>
-                        in mind?
-                    </h2>
-
-                    <p>
-                        Whether it's about a project, an opportunity,
-                        or just saying hi, feel free to reach out.
-                    </p>
-
-                </div>
-
-
-                <div class="connect-links">
-
-
-                    <!-- Gmail -->
-
-                    <a
-                        href="mailto:devinoktavianus2005@gmail.com"
-                        class="connect-link"
-                    >
-
-                        <div class="connect-icon">
-                            @
-                        </div>
-
-                        <span>
-                            Gmail
-                        </span>
-
-                        <strong>↗</strong>
-
-                    </a>
-
-
-                    <!-- LinkedIn -->
-
-                    <a
-                        href="https://www.linkedin.com/in/devinoktavianus-09a71343a"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="connect-link"
-                    >
-
-                        <div class="connect-icon">
-                            in
-                        </div>
-
-                        <span>
-                            LinkedIn
-                        </span>
-
-                        <strong>↗</strong>
-
-                    </a>
-
-
-                    <!-- Instagram -->
-
-                    <a
-                        href="https://www.instagram.com/devinoktavianusss/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="connect-link"
-                    >
-
-                        <div class="connect-icon">
-                            ◎
-                        </div>
-
-                        <span>
-                            Instagram
-                        </span>
-
-                        <strong>↗</strong>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =====================================================
-         PROJECT MODAL
-    ====================================================== -->
-
-    <div
-        class="project-modal"
-        id="projectModal"
-        aria-hidden="true"
-    >
-
-        <div
-            class="modal-overlay"
-            id="modalOverlay"
-        ></div>
-
-
-        <div class="modal-box">
-
-            <button
-                class="modal-close"
-                id="modalClose"
-                aria-label="Close project"
-            >
-                ×
-            </button>
-
-
-            <div class="modal-header">
-
-                <span id="modalNumber">
-                    01
-                </span>
-
-                <div>
-
-                    <small id="modalCategory">
-                        UI/UX
-                    </small>
-
-                    <h2 id="modalTitle">
-                        Project
-                    </h2>
-
-                </div>
-
-            </div>
-
-
-            <div class="modal-divider"></div>
-
-
-            <div class="modal-grid">
-
-
-                <!-- LEFT -->
-
-                <div class="modal-main">
-
-                    <div class="modal-detail">
-
-                        <span>
-                            OVERVIEW
-                        </span>
-
-                        <p id="modalOverview"></p>
-
-                    </div>
-
-
-                    <div class="modal-detail">
-
-                        <span>
-                            WHAT I WORKED ON
-                        </span>
-
-                        <p id="modalWork"></p>
-
-                    </div>
-
-
-                    <div class="modal-detail">
-
-                        <span>
-                            PROJECT OUTPUT
-                        </span>
-
-                        <p id="modalOutput"></p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RIGHT -->
-
-                <aside class="modal-sidebar">
-
-                    <div class="modal-side-item">
-
-                        <span>
-                            COURSE
-                        </span>
-
-                        <p id="modalCourse"></p>
-
-                    </div>
-
-
-                    <div class="modal-side-item">
-
-                        <span>
-                            TOOLS
-                        </span>
-
-                        <div
-                            class="modal-tools"
-                            id="modalTools"
-                        ></div>
-
-                    </div>
-
-
-                    <div class="modal-side-item">
-
-                        <span>
-                            EVIDENCE / RESULT
-                        </span>
-
-                        <div
-                            class="modal-links"
-                            id="modalLinks"
-                        ></div>
-
-                    </div>
-
-                </aside>
-
             </div>
 
         </div>
 
     </div>
 
+</section>
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+<!-- =========================
+     MARQUEE
+========================= -->
 
-    <footer class="footer">
+<div class="marquee">
+    <div class="marquee-track">
+        <span>DATA ANALYTICS</span>
+        <i>✦</i>
+        <span>DATA VISUALIZATION</span>
+        <i>✦</i>
+        <span>BUSINESS ANALYSIS</span>
+        <i>✦</i>
+        <span>INFORMATION SYSTEMS</span>
+        <i>✦</i>
+        <span>SQL & EXCEL</span>
+        <i>✦</i>
 
-        <div class="footer-top">
+        <span>DATA ANALYTICS</span>
+        <i>✦</i>
+        <span>DATA VISUALIZATION</span>
+        <i>✦</i>
+        <span>BUSINESS ANALYSIS</span>
+        <i>✦</i>
+        <span>INFORMATION SYSTEMS</span>
+        <i>✦</i>
+        <span>SQL & EXCEL</span>
+        <i>✦</i>
+    </div>
+</div>
 
-            <span>
-                DEVIN OKTAVIANUS
-            </span>
 
-            <span>
-                INFORMATION SYSTEMS · BINUS UNIVERSITY
-            </span>
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section about-section" id="about">
+
+    <div class="section-label">
+        <span>01</span>
+        ABOUT
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-heading reveal">
+
+            <div class="small-label">
+                A LITTLE ABOUT ME
+            </div>
+
+            <h2>
+                I like working
+                with data and
+                figuring things out.
+            </h2>
+
+            <p class="small-note">
+                Still learning, still figuring things out.
+            </p>
 
         </div>
 
 
-        <div class="footer-bottom">
+        <div class="about-text reveal">
 
-            <span>
-                © 2026 Devin Oktavianus
-            </span>
+            <p>
+                I am an Information Systems student at BINUS University
+                with an interest in Data Analysis, Business Analysis,
+                and Business Intelligence.
+            </p>
 
-            <span>
-                Built while still figuring things out.
-            </span>
+            <p>
+                When I first chose the Business Intelligence track,
+                I did not really know what to expect. As I explored
+                different subjects, I started to enjoy working with
+                data, especially when it involved Excel, dashboards,
+                and data visualization.
+            </p>
 
-            <a href="#home">
-                BACK TO TOP ↑
+            <p>
+                From there, I started exploring tools such as Tableau,
+                Power BI, SQL, Python, and Oracle. I enjoy the process
+                of taking something that initially looks like a lot
+                of numbers and turning it into information that is
+                easier to understand.
+            </p>
+
+            <p>
+                Outside academics, I have also been active in HIMSISFO
+                BINUS University. Being involved in different divisions
+                and events pushed me outside my comfort zone. I started
+                from an activist role, later became a Vice Coordinator,
+                and eventually took the role of Project Manager for
+                one of the organization's programs.
+            </p>
+
+            <p>
+                I am still exploring where I want to go next, but right
+                now I am most interested in opportunities where I can
+                combine data, business, and technology.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ABOUT INFO -->
+    <div class="about-info reveal">
+
+        <div class="info-block">
+            <span class="info-label">GPA</span>
+            <strong>3.44 <small>/ 4.00</small></strong>
+        </div>
+
+        <div class="info-block">
+            <span class="info-label">LANGUAGES</span>
+            <strong>Indonesian · English</strong>
+        </div>
+
+        <div class="info-block">
+            <span class="info-label">BEYOND DATA</span>
+            <strong>Watching · Gaming · Sports</strong>
+        </div>
+
+        <div class="info-block skills-block">
+            <span class="info-label">MY SKILLS</span>
+
+            <div class="skill-list">
+                <span>Microsoft Excel</span>
+                <span>Tableau</span>
+                <span>SQL</span>
+                <span>Power BI</span>
+                <span>Python</span>
+                <span>Oracle Database</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section class="section experience-section" id="experience">
+
+    <div class="section-label">
+        <span>02</span>
+        EXPERIENCE
+    </div>
+
+    <div class="section-heading-row reveal">
+
+        <div>
+            <div class="small-label">
+                WHERE I'VE BEEN INVOLVED
+            </div>
+
+            <h2>
+                Experience along the way.
+            </h2>
+        </div>
+
+        <p>
+            A timeline of the roles, organizations, and events
+            I have been involved in during university.
+        </p>
+
+    </div>
+
+
+    <!-- EXPERIENCE TIMELINE -->
+
+    <div class="experience-timeline">
+
+        <!-- 01 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    FEB 2025 — FEB 2026
+                </span>
+
+                <h3>Activist of Human Resource Development</h3>
+
+                <h4>HIMSISFO BINUS University</h4>
+
+                <p>
+                    Supported Human Resource Development activities
+                    and contributed to organizational programs,
+                    coordination, and member development.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- 02 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    MAR 2025 — JUL 2025
+                </span>
+
+                <h3>
+                    Vice Coordinator of Equipment Division
+                </h3>
+
+                <h4>
+                    Company Visit HIMSISFO 2025: ADIWIDIA
+                </h4>
+
+                <p>
+                    Coordinated equipment preparation and logistical
+                    requirements while communicating with the company
+                    and internal divisions to support smooth event
+                    execution.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- 03 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    APR 2025 — SEP 2025
+                </span>
+
+                <h3>Support Division Staff</h3>
+
+                <h4>
+                    Expo & Welcoming Party HIMSISFO 2025: VENTURE
+                </h4>
+
+                <p>
+                    Supported event preparation and execution,
+                    helping the team handle operational needs
+                    throughout the program.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- 04 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    MAY 2025
+                </span>
+
+                <h3>Volunteer</h3>
+
+                <h4>
+                    NAKAMA x Meta Tech Partner Event
+                </h4>
+
+                <p>
+                    Supported the event team during the NAKAMA
+                    technology partner event and assisted with
+                    event operations.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- 05 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    JUN 2025 — DEC 2025
+                </span>
+
+                <h3>
+                    Vice Coordinator of Equipment Division
+                </h3>
+
+                <h4>
+                    LDKK Aktivis HIMSISFO 2026: IGNITE
+                </h4>
+
+                <p>
+                    Coordinated equipment preparation and supported
+                    logistical needs throughout the program.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- 06 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    OCT 2025
+                </span>
+
+                <h3>Volunteer Notulis</h3>
+
+                <h4>
+                    SELCAVIS HIMSISFO 2025: PRODIGI
+                </h4>
+
+                <p>
+                    Assisted the event team by documenting important
+                    discussions and information during the program.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- 07 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    FEB 2026 — MAY 2026
+                </span>
+
+                <h3>Project Manager</h3>
+
+                <h4>
+                    GERAK HIMSISFO 2026: VIBEZ
+                </h4>
+
+                <p>
+                    Led the project team in planning, coordinating,
+                    and executing the VIBEZ program while working
+                    across divisions to keep the event on track.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- 08 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    FEB 2026 — PRESENT
+                </span>
+
+                <h3>Staff of Human Resource Development</h3>
+
+                <h4>HIMSISFO BINUS University</h4>
+
+                <p>
+                    Currently contributing to Human Resource Development
+                    activities and supporting programs within HIMSISFO.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- 09 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    MAR 2026 — SEP 2026
+                </span>
+
+                <h3>Equipment Division Staff</h3>
+
+                <h4>
+                    LDKCP HIMSISFO 2026: LUNAR
+                </h4>
+
+                <p>
+                    Supported equipment preparation and logistical
+                    requirements throughout the LUNAR program.
+                </p>
+            </div>
+        </article>
+
+
+        <!-- 10 -->
+        <article class="experience-item reveal">
+            <div class="timeline-point"></div>
+
+            <div class="experience-card">
+                <span class="experience-date">
+                    SEP 2026
+                </span>
+
+                <h3>Volunteer</h3>
+
+                <h4>Teach For Indonesia — Greener Day 2026</h4>
+
+                <p>
+                    Participated as a volunteer in the Greener Day
+                    2026 environmental community program.
+                </p>
+            </div>
+        </article>
+
+    </div>
+
+
+    <!-- LINKEDIN -->
+    <div class="experience-link reveal">
+
+        <span>
+            For more details about my experience
+        </span>
+
+        <a
+            href="https://www.linkedin.com/in/devin-oktavianus-09a71343a"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            VIEW MY LINKEDIN ↗
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="section projects-section" id="projects">
+
+    <div class="section-label">
+        <span>03</span>
+        PROJECTS
+    </div>
+
+
+    <div class="section-heading-row projects-heading reveal">
+
+        <div>
+            <div class="small-label">
+                SELECTED WORK
+            </div>
+
+            <h2>
+                Things I've worked on.
+            </h2>
+        </div>
+
+        <p>
+            Academic projects where I explored UI/UX, programming,
+            data, business, and research.
+        </p>
+
+    </div>
+
+
+    <!-- PROJECT ACCORDION -->
+
+    <div class="project-list">
+
+
+        <!-- =====================
+             PROJECT 01
+        ====================== -->
+
+        <details class="project-item reveal">
+
+            <summary>
+
+                <div class="project-number">01</div>
+
+                <div class="project-main">
+                    <span class="project-meta">
+                        S1 · UI/UX
+                    </span>
+
+                    <h3>Gym Junkie</h3>
+
+                    <p>
+                        A mobile fitness application designed to help
+                        users manage workout goals, calorie tracking,
+                        progress, and other fitness-related needs.
+                    </p>
+                </div>
+
+                <span class="project-toggle">+</span>
+
+            </summary>
+
+
+            <div class="project-detail">
+
+                <div class="detail-column">
+
+                    <span class="detail-label">OVERVIEW</span>
+
+                    <p>
+                        Gym Junkie is a mobile application concept
+                        developed for the User Experience Research
+                        and Design course. The project focuses on
+                        helping users manage their fitness activities
+                        in one place.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">WHAT I WORKED ON</span>
+
+                    <p>
+                        I worked on the UI/UX design and user experience
+                        flow of the application. The design includes
+                        onboarding, user goals, and the main experience
+                        for users starting their fitness journey.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">PROJECT OUTPUT</span>
+
+                    <p>
+                        A Figma-based mobile application prototype
+                        covering the main user flow and interface
+                        concept.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">TOOLS</span>
+
+                    <div class="detail-tags">
+                        <span>Figma</span>
+                        <span>UI/UX</span>
+                        <span>User Research</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://www.figma.com/design/tFkZSPDyv6l4p4Rljx7rd6/Gym-Junkie?node-id=0-1&p=f&t=kfALNMn4M5pV0Ex7-0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW FIGMA ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- =====================
+             PROJECT 02
+        ====================== -->
+
+        <details class="project-item reveal">
+
+            <summary>
+
+                <div class="project-number">02</div>
+
+                <div class="project-main">
+
+                    <span class="project-meta">
+                        S1 · UI/UX LAB
+                    </span>
+
+                    <h3>Lively</h3>
+
+                    <p>
+                        A mobile application concept designed to make
+                        users feel more comfortable appearing on camera
+                        during live streaming through virtual characters
+                        and filters.
+                    </p>
+
+                </div>
+
+                <span class="project-toggle">+</span>
+
+            </summary>
+
+
+            <div class="project-detail">
+
+                <div class="detail-column">
+
+                    <span class="detail-label">OVERVIEW</span>
+
+                    <p>
+                        Lively was developed as a UI/UX Lab project
+                        based on a business case provided during the
+                        course. The concept focuses on helping users
+                        feel more comfortable when appearing on camera
+                        during live streaming.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">WHAT I WORKED ON</span>
+
+                    <p>
+                        I worked on translating the business case into
+                        a mobile UI/UX concept in Figma, including the
+                        structure and interface of the application.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">PROJECT OUTPUT</span>
+
+                    <p>
+                        A Figma prototype and supporting project
+                        documentation based on the given business case.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">TOOLS</span>
+
+                    <div class="detail-tags">
+                        <span>Figma</span>
+                        <span>UI/UX</span>
+                        <span>Business Case</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://www.figma.com/design/KXXmaq4mUE0XviC5SErXw9/BS11-08-TM08?node-id=0-1&t=u8tB6KyCn29DtvTa-1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW FIGMA ↗
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/drive/folders/1bn3-fZUKZrrV3YQ5s1XCHx7tY9QVs3Qf?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW DOCUMENTATION ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- =====================
+             PROJECT 03
+        ====================== -->
+
+        <details class="project-item reveal">
+
+            <summary>
+
+                <div class="project-number">03</div>
+
+                <div class="project-main">
+
+                    <span class="project-meta">
+                        S3 · PROGRAMMING FOR BUSINESS
+                    </span>
+
+                    <h3>Tripiora</h3>
+
+                    <p>
+                        An all-in-one travel website concept that combines
+                        flights, hotels, travel packages, destinations,
+                        and travel assistance in one platform.
+                    </p>
+
+                </div>
+
+                <span class="project-toggle">+</span>
+
+            </summary>
+
+
+            <div class="project-detail">
+
+                <div class="detail-column">
+
+                    <span class="detail-label">OVERVIEW</span>
+
+                    <p>
+                        Tripiora is a travel website concept created
+                        for Programming For Business. The platform
+                        brings different travel needs into one place,
+                        from choosing a destination to selecting
+                        travel packages.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">WHAT I WORKED ON</span>
+
+                    <p>
+                        I worked as part of a five-person group and
+                        contributed to the design of the web application
+                        in Figma, including the structure and interface
+                        of the travel platform.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">PROJECT OUTPUT</span>
+
+                    <p>
+                        A website UI/UX concept designed around an
+                        end-to-end travel booking experience.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">TOOLS</span>
+
+                    <div class="detail-tags">
+                        <span>Figma</span>
+                        <span>Web App</span>
+                        <span>PFB</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://www.figma.com/design/O4sC97UF08m4WqrH4BWlq3/Tripiora?node-id=0-1&t=6l8Zzm7woK0CjDgl-1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW FIGMA ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- =====================
+             PROJECT 04
+        ====================== -->
+
+        <details class="project-item reveal">
+
+            <summary>
+
+                <div class="project-number">04</div>
+
+                <div class="project-main">
+
+                    <span class="project-meta">
+                        S3 · DATA & INFORMATION MANAGEMENT
+                    </span>
+
+                    <h3>Data & Information Management</h3>
+
+                    <p>
+                        An academic project focused on data and
+                        information management. Project documentation
+                        and final output will be added soon.
+                    </p>
+
+                </div>
+
+                <span class="project-toggle">+</span>
+
+            </summary>
+
+
+            <div class="project-detail">
+
+                <div class="detail-column">
+
+                    <span class="detail-label">OVERVIEW</span>
+
+                    <p>
+                        This project is part of the Data & Information
+                        Management course. The project details and
+                        final documentation are still being prepared.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">STATUS</span>
+
+                    <p>
+                        Documentation coming soon.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- =====================
+             PROJECT 05
+        ====================== -->
+
+        <details class="project-item reveal">
+
+            <summary>
+
+                <div class="project-number">05</div>
+
+                <div class="project-main">
+
+                    <span class="project-meta">
+                        S4 · DATA MODELING
+                    </span>
+
+                    <h3>Data Modeling</h3>
+
+                    <p>
+                        A group project using the School Grades &
+                        Demographic dataset, focusing on data cleaning,
+                        preparation, and modeling.
+                    </p>
+
+                </div>
+
+                <span class="project-toggle">+</span>
+
+            </summary>
+
+
+            <div class="project-detail">
+
+                <div class="detail-column">
+
+                    <span class="detail-label">OVERVIEW</span>
+
+                    <p>
+                        This project focused on preparing and modeling
+                        a dataset containing school grades and demographic
+                        information.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">WHAT I WORKED ON</span>
+
+                    <p>
+                        I worked with the dataset preparation process,
+                        including data cleaning, checking duplicates,
+                        handling inconsistent values, and preparing
+                        the data for modeling.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">PROJECT OUTPUT</span>
+
+                    <p>
+                        A completed data modeling project supported by
+                        the cleaned dataset and project documentation.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">TOOLS</span>
+
+                    <div class="detail-tags">
+                        <span>Data Modeling</span>
+                        <span>Data Cleaning</span>
+                        <span>Oracle</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://drive.google.com/drive/folders/1F68tyIJwJWWpN2SvZn0jnsJBugcc8tka?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW PROJECT FILES ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- =====================
+             PROJECT 06
+        ====================== -->
+
+        <details class="project-item reveal">
+
+            <summary>
+
+                <div class="project-number">06</div>
+
+                <div class="project-main">
+
+                    <span class="project-meta">
+                        S4 · DATA VISUALIZATION
+                    </span>
+
+                    <h3>Data Visualization</h3>
+
+                    <p>
+                        A data visualization project where I cleaned
+                        raw data, built a Power Pivot model, and created
+                        an interactive Tableau dashboard.
+                    </p>
+
+                </div>
+
+                <span class="project-toggle">+</span>
+
+            </summary>
+
+
+            <div class="project-detail">
+
+                <div class="detail-column">
+
+                    <span class="detail-label">OVERVIEW</span>
+
+                    <p>
+                        This project used a Global Data on Sustainable
+                        Energy dataset. The goal was to prepare the data
+                        and turn it into visual insights through a
+                        dashboard.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">WHAT I WORKED ON</span>
+
+                    <p>
+                        I started from the raw Excel dataset, cleaned
+                        and prepared the data, created a Power Pivot
+                        model, and then used Tableau to build the
+                        dashboard and visualize the data.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">PROJECT OUTPUT</span>
+
+                    <p>
+                        The final output includes the cleaned dataset,
+                        Power Pivot work, and Tableau dashboard
+                        documentation.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">TOOLS</span>
+
+                    <div class="detail-tags">
+                        <span>Excel</span>
+                        <span>Power Pivot</span>
+                        <span>Tableau</span>
+                        <span>Data Visualization</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://drive.google.com/drive/folders/12SMnXpoXDdThuITf4F_bnG_zzte8_44v?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW PROJECT FILES ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- =====================
+             PROJECT 07
+        ====================== -->
+
+        <details class="project-item reveal">
+
+            <summary>
+
+                <div class="project-number">07</div>
+
+                <div class="project-main">
+
+                    <span class="project-meta">
+                        S4 · CREATIVITY & INNOVATION
+                    </span>
+
+                    <h3>WeSkill</h3>
+
+                    <p>
+                        A career development platform concept designed
+                        to connect skills, learning, assessment, and
+                        recruitment in one ecosystem.
+                    </p>
+
+                </div>
+
+                <span class="project-toggle">+</span>
+
+            </summary>
+
+
+            <div class="project-detail">
+
+                <div class="detail-column">
+
+                    <span class="detail-label">OVERVIEW</span>
+
+                    <p>
+                        WeSkill is a business idea developed for the
+                        Creativity and Innovation course. The concept
+                        is similar to a career platform, but focuses
+                        more deeply on helping users understand their
+                        skills and prepare for employment.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">WHAT I WORKED ON</span>
+
+                    <p>
+                        I contributed to developing the business idea
+                        and creating the UI/UX prototype. The concept
+                        covers areas such as skill assessment, learning,
+                        skill validation, job matching, and career
+                        development.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">PROJECT OUTPUT</span>
+
+                    <p>
+                        A business concept, supporting documentation,
+                        and Figma prototype for the proposed platform.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">TOOLS</span>
+
+                    <div class="detail-tags">
+                        <span>Figma</span>
+                        <span>Business Model</span>
+                        <span>UI/UX</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://www.figma.com/design/7tGvSbuzwCRdEH3K4JWJi9/WeSkill-Proto?node-id=0-1&p=f&t=NS1JVtQepaZn7TP4-0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW FIGMA ↗
+                    </a>
+
+                    <a
+                        href="https://drive.google.com/drive/folders/1MXunUfXErv-3ELVOhlO_RLfeKVi-Sohq?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW DOCUMENTATION ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </details>
+
+
+        <!-- =====================
+             PROJECT 08
+        ====================== -->
+
+        <details class="project-item reveal">
+
+            <summary>
+
+                <div class="project-number">08</div>
+
+                <div class="project-main">
+
+                    <span class="project-meta">
+                        S4 · RESEARCH METHODS IN INFORMATION SYSTEMS
+                    </span>
+
+                    <h3>Healthcare Chatbot Trust Research</h3>
+
+                    <p>
+                        Research on factors influencing user trust and
+                        continuance intention when using healthcare
+                        chatbots.
+                    </p>
+
+                </div>
+
+                <span class="project-toggle">+</span>
+
+            </summary>
+
+
+            <div class="project-detail">
+
+                <div class="detail-column">
+
+                    <span class="detail-label">OVERVIEW</span>
+
+                    <p>
+                        This research examines factors that influence
+                        trust and continuance intention toward
+                        healthcare chatbots.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">WHAT I WORKED ON</span>
+
+                    <p>
+                        I worked as part of a two-person research group.
+                        The study used a quantitative approach and
+                        examined variables including Perceived Usefulness,
+                        Perceived Ease of Use, Perceived Risk, Trust,
+                        and Continuance Intention.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">PROJECT OUTPUT</span>
+
+                    <p>
+                        A research paper covering the research background,
+                        theoretical model, methodology, data collection,
+                        analysis, and findings.
+                    </p>
+
+                </div>
+
+
+                <div class="detail-column">
+
+                    <span class="detail-label">METHOD</span>
+
+                    <div class="detail-tags">
+                        <span>Quantitative</span>
+                        <span>SEM-PLS</span>
+                        <span>Research</span>
+                    </div>
+
+                </div>
+
+
+                <div class="project-links">
+
+                    <a
+                        href="https://docs.google.com/document/d/1-m_hN4W1TsBsPnr6p2HegIQRUNWUaLFOVTA2ejGxpVA/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        VIEW RESEARCH ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONNECT
+========================= -->
+
+<section class="section connect-section" id="connect">
+
+    <div class="section-label">
+        <span>04</span>
+        CONNECT
+    </div>
+
+
+    <div class="connect-grid reveal">
+
+        <div class="connect-heading">
+
+            <div class="small-label">
+                LET'S CONNECT
+            </div>
+
+            <h2>
+                Have something
+                in mind?
+            </h2>
+
+            <p>
+                Whether it's an opportunity, a project, or just a
+                conversation, feel free to reach out.
+            </p>
+
+        </div>
+
+
+        <div class="connect-links">
+
+            <a
+                href="mailto:devinoktavianus2005@gmail.com"
+                class="connect-item"
+            >
+                <span class="connect-icon">@</span>
+
+                <span class="connect-name">
+                    Gmail
+                </span>
+
+                <span class="connect-arrow">
+                    ↗
+                </span>
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/devin-oktavianus-09a71343a"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="connect-item"
+            >
+                <span class="connect-icon">in</span>
+
+                <span class="connect-name">
+                    LinkedIn
+                </span>
+
+                <span class="connect-arrow">
+                    ↗
+                </span>
+            </a>
+
+
+            <a
+                href="https://www.instagram.com/devinoktavianusss/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="connect-item"
+            >
+                <span class="connect-icon">◎</span>
+
+                <span class="connect-name">
+                    Instagram
+                </span>
+
+                <span class="connect-arrow">
+                    ↗
+                </span>
             </a>
 
         </div>
 
-    </footer>
+    </div>
+
+</section>
+
+</main>
 
 
-    <script src="script.js"></script>
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-left">
+        © 2026 Devin Oktavianus
+    </div>
+
+    <div class="footer-right">
+        Built while figuring things out.
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
