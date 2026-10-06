@@ -1,24 +1,111 @@
 /* =========================================================
-   MOBILE MENU
+   MOBILE NAVIGATION
 ========================================================= */
 
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
 
-if (menuToggle && navLinks) {
+if (menuToggle && navMenu) {
 
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+  });
+
+
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  navLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
     });
 
+  });
 
-    navLinks.querySelectorAll("a").forEach(link => {
+}
 
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("open");
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections = document.querySelectorAll("section[id]");
+const navigationLinks = document.querySelectorAll(".nav-link");
+
+if (sections.length && navigationLinks.length) {
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "-35% 0px -55% 0px",
+    threshold: 0
+  };
+
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const currentId = entry.target.getAttribute("id");
+
+        navigationLinks.forEach((link) => {
+
+          link.classList.remove("active");
+
+          const href = link.getAttribute("href");
+
+          if (href === `#${currentId}`) {
+            link.classList.add("active");
+          }
+
         });
 
+      });
+
+    },
+    observerOptions
+  );
+
+
+  sections.forEach((section) => {
+    sectionObserver.observe(section);
+  });
+
+}
+
+
+/* =========================================================
+   PROJECT ACCORDION
+   Only one project opens at a time.
+========================================================= */
+
+const projectItems = document.querySelectorAll(".project-item");
+
+if (projectItems.length) {
+
+  projectItems.forEach((item) => {
+
+    item.addEventListener("toggle", () => {
+
+      if (!item.open) {
+        return;
+      }
+
+      projectItems.forEach((otherItem) => {
+
+        if (otherItem !== item) {
+          otherItem.removeAttribute("open");
+        }
+
+      });
+
     });
+
+  });
 
 }
 
@@ -27,164 +114,102 @@ if (menuToggle && navLinks) {
    SMOOTH SCROLL
 ========================================================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+const internalLinks = document.querySelectorAll('a[href^="#"]');
 
-    link.addEventListener("click", function (event) {
+internalLinks.forEach((link) => {
 
-        const targetId = this.getAttribute("href");
+  link.addEventListener("click", (event) => {
 
-        if (targetId === "#") return;
+    const targetId = link.getAttribute("href");
 
-        const target = document.querySelector(targetId);
-
-        if (!target) return;
-
-        event.preventDefault();
-
-        target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    });
-
-});
-
-
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
-
-const sections = document.querySelectorAll("section[id]");
-const navItems = document.querySelectorAll(".nav-links a");
-
-function updateActiveNav() {
-
-    let currentSection = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 160;
-        const sectionHeight = section.offsetHeight;
-
-        if (
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ) {
-            currentSection = section.getAttribute("id");
-        }
-
-    });
-
-    navItems.forEach(item => {
-
-        item.classList.remove("active");
-
-        if (item.getAttribute("href") === `#${currentSection}`) {
-            item.classList.add("active");
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll", updateActiveNav);
-
-updateActiveNav();
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const revealElements = document.querySelectorAll(".reveal");
-
-const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
+    if (!targetId || targetId === "#") {
+      return;
     }
-);
 
+    const target = document.querySelector(targetId);
 
-revealElements.forEach(element => {
+    if (!target) {
+      return;
+    }
 
-    revealObserver.observe(element);
+    event.preventDefault();
 
-});
-
-
-/* =========================================================
-   PROJECT ACCORDION
-   Only one project opens at a time
-========================================================= */
-
-const projectItems = document.querySelectorAll(".project-item");
-
-projectItems.forEach(item => {
-
-    item.addEventListener("toggle", () => {
-
-        if (!item.open) return;
-
-        projectItems.forEach(otherItem => {
-
-            if (otherItem !== item) {
-                otherItem.removeAttribute("open");
-            }
-
-        });
-
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
 
+  });
+
 });
 
 
 /* =========================================================
-   CLOSE PROJECT WHEN CLICKING OUTSIDE
+   PROJECT SUMMARY ACCESSIBILITY
 ========================================================= */
 
-document.addEventListener("click", event => {
+const projectSummaries = document.querySelectorAll(".project-item summary");
 
-    const clickedInsideProject =
-        event.target.closest(".project-item");
+projectSummaries.forEach((summary) => {
 
-    if (clickedInsideProject) return;
+  summary.addEventListener("keydown", (event) => {
+
+    if (event.key === "Enter" || event.key === " ") {
+
+      event.preventDefault();
+
+      const parent = summary.parentElement;
+
+      parent.open = !parent.open;
+
+    }
+
+  });
 
 });
 
 
 /* =========================================================
-   PREVENT HASH JUMP ON PAGE LOAD
+   CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+========================================================= */
+
+document.addEventListener("click", (event) => {
+
+  if (!menuToggle || !navMenu) {
+    return;
+  }
+
+  const clickedInsideMenu =
+    navMenu.contains(event.target);
+
+  const clickedToggle =
+    menuToggle.contains(event.target);
+
+  if (
+    navMenu.classList.contains("open") &&
+    !clickedInsideMenu &&
+    !clickedToggle
+  ) {
+    navMenu.classList.remove("open");
+  }
+
+});
+
+
+/* =========================================================
+   INITIAL STATE
 ========================================================= */
 
 window.addEventListener("load", () => {
 
-    if (window.location.hash) {
+  /*
+    Intentionally no reveal animation here.
 
-        setTimeout(() => {
+    The portfolio content is already visible by default.
+    This prevents the entire website from becoming blank
+    if JavaScript fails.
+  */
 
-            window.scrollTo({
-                top: 0,
-                behavior: "instant"
-            });
-
-        }, 50);
-
-    }
+  document.body.classList.add("loaded");
 
 });
