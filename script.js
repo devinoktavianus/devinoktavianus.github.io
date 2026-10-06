@@ -64,9 +64,65 @@ if (sections.length && navigationLinks.length) {
 
 
 /* =========================================================
+   EXPERIENCE HORIZONTAL DRAG
+   Desktop timeline can be dragged left/right.
+========================================================= */
+
+const experienceWrapper = document.querySelector(".experience-wrapper");
+
+if (experienceWrapper) {
+
+  let isDragging = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+
+  experienceWrapper.addEventListener("mousedown", (event) => {
+
+    if (window.innerWidth <= 700) {
+      return;
+    }
+
+    isDragging = true;
+    startX = event.pageX - experienceWrapper.offsetLeft;
+    startScrollLeft = experienceWrapper.scrollLeft;
+
+    experienceWrapper.classList.add("is-dragging");
+  });
+
+  experienceWrapper.addEventListener("mousemove", (event) => {
+
+    if (!isDragging) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const x = event.pageX - experienceWrapper.offsetLeft;
+    const distance = x - startX;
+
+    experienceWrapper.scrollLeft =
+      startScrollLeft - distance;
+  });
+
+  const stopExperienceDrag = () => {
+
+    isDragging = false;
+
+    experienceWrapper.classList.remove("is-dragging");
+  };
+
+  experienceWrapper.addEventListener("mouseup", stopExperienceDrag);
+  experienceWrapper.addEventListener("mouseleave", stopExperienceDrag);
+
+}
+
+
+/* =========================================================
    PROJECT ACCORDION
    Only one project opens at a time.
 ========================================================= */
+
+
 
 const projectItems = document.querySelectorAll(".project-item");
 
