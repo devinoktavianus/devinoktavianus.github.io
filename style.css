@@ -566,7 +566,7 @@ button {
 
 .orbit-dot-two {
   bottom: 24%;
-  left: 15%;
+  left: 19.3%;
   width: 5px;
   height: 5px;
 }
@@ -605,7 +605,7 @@ button {
 
 .note-two {
   bottom: 24%;
-  left: 5%;
+  left: 10.5%;
 }
 
 
@@ -788,7 +788,9 @@ button {
 .fact-item {
   min-height: 150px;
 
-  padding: 29px 27px;
+  padding: 31px 27px;
+
+  min-width: 0;
 
   border-right: 1px solid var(--border);
 }
@@ -805,7 +807,8 @@ button {
   grid-column: 1 / -1;
   border-top: 1px solid var(--border);
   border-right: 0;
-  min-height: 135px;
+  min-height: 155px;
+  padding: 34px 0 38px;
 }
 
 .skills-fact .fact-label {
@@ -910,30 +913,13 @@ button {
   position: relative;
 
   width: 100%;
-  min-width: 2850px;
+  min-width: 0;
 
   min-height: 650px;
 
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: visible;
 
-  padding: 0 105px 30px;
-
-  scrollbar-width: thin;
-  scrollbar-color: rgba(118, 167, 255, 0.3) transparent;
-}
-
-.experience-wrapper::-webkit-scrollbar {
-  height: 5px;
-}
-
-.experience-wrapper::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.experience-wrapper::-webkit-scrollbar-thumb {
-  background: rgba(118, 167, 255, 0.25);
-  border-radius: 100px;
+  padding: 0 1.5%;
 }
 
 .experience-line {
@@ -941,8 +927,8 @@ button {
 
   top: 50%;
 
-  left: 105px;
-  right: 105px;
+  left: 1.5%;
+  right: 1.5%;
 
   height: 1px;
 
@@ -960,7 +946,7 @@ button {
 
   top: 0;
 
-  width: 270px;
+  width: 205px;
   height: 100%;
 
   transform: translateX(-50%);
@@ -975,35 +961,35 @@ button {
 }
 
 .node-3 {
-  left: 25%;
+  left: 28.2%;
 }
 
 .node-4 {
-  left: 35%;
+  left: 37.1%;
 }
 
 .node-5 {
-  left: 45%;
+  left: 46%;
 }
 
 .node-6 {
-  left: 55%;
+  left: 54%;
 }
 
 .node-7 {
-  left: 65%;
+  left: 62.9%;
 }
 
 .node-8 {
-  left: 75%;
+  left: 71.8%;
 }
 
 .node-9 {
-  left: 85%;
+  left: 80.7%;
 }
 
 .node-10 {
-  left: 95%;
+  left: 89.5%;
 }
 
 .timeline-dot {
@@ -1059,11 +1045,11 @@ button {
 
   left: 50%;
 
-  width: 255px;
+  width: 205px;
 
   transform: translateX(-50%);
 
-  padding: 22px;
+  padding: 19px;
 
   border: 1px solid var(--border);
   border-radius: var(--radius);
