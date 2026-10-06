@@ -1061,11 +1061,11 @@ button {
   white-space: nowrap;
 }
 
-.experience-node:nth-child(odd) .experience-date {
+.experience-node:nth-of-type(odd) .experience-date {
   top: calc(50% + 31px);
 }
 
-.experience-node:nth-child(even) .experience-date {
+.experience-node:nth-of-type(even) .experience-date {
   bottom: calc(50% + 31px);
 }
 
@@ -2006,8 +2006,8 @@ button {
     width: auto;
   }
 
-  .experience-node:nth-child(odd) .experience-date,
-  .experience-node:nth-child(even) .experience-date {
+  .experience-node:nth-of-type(odd) .experience-date,
+  .experience-node:nth-of-type(even) .experience-date {
     top: auto;
     bottom: auto;
   }
