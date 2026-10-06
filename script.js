@@ -1,42 +1,31 @@
 /* =========================================================
-   MOBILE MENU
+   NAVIGATION
 ========================================================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+const menuButton = document.querySelector(".menu-button");
+const navLinks = document.querySelector(".nav-links");
 
-if (menuBtn && navLinks) {
-
-  menuBtn.addEventListener("click", () => {
-
-    const isOpen =
-      navLinks.classList.toggle("open");
-
-    menuBtn.setAttribute(
-      "aria-label",
-      isOpen ? "Close menu" : "Open menu"
-    );
-
+if (menuButton && navLinks) {
+  menuButton.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
   });
 
-
-  document
-    .querySelectorAll(".nav-links a")
-    .forEach((link) => {
-
-      link.addEventListener("click", () => {
-
-        navLinks.classList.remove("open");
-
-        menuBtn.setAttribute(
-          "aria-label",
-          "Open menu"
-        );
-
-      });
-
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
     });
+  });
+}
 
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
 }
 
 
@@ -44,28 +33,29 @@ if (menuBtn && navLinks) {
    SCROLL REVEAL
 ========================================================= */
 
-const revealElements =
-  document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(
+  ".section-heading, .about-story, .about-orb, .info-card, .skill-card, .timeline-item, .project-item, .connect-link"
+);
 
-const revealObserver =
-  new IntersectionObserver(
-    (entries, observer) => {
+revealElements.forEach((element) => {
+  element.classList.add("reveal");
+});
 
-      entries.forEach((entry) => {
 
-        if (!entry.isIntersecting) return;
+const revealObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
 
-        entry.target.classList.add("visible");
+      entry.target.classList.add("visible");
 
-        observer.unobserve(entry.target);
-
-      });
-
-    },
-    {
-      threshold: 0.12
-    }
-  );
+      observer.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.08
+  }
+);
 
 
 revealElements.forEach((element) => {
@@ -74,165 +64,98 @@ revealElements.forEach((element) => {
 
 
 /* =========================================================
-   NAVBAR BACKGROUND
+   CERTIFICATE MODAL
 ========================================================= */
 
-const navWrap =
-  document.querySelector(".nav-wrap");
+const certificateLinks = document.querySelectorAll(".certificate-link");
+const modal = document.getElementById("certificateModal");
+const modalTitle = document.getElementById("certificateTitle");
+const modalClose = document.querySelector(".modal-close");
 
-function updateNavbar() {
+certificateLinks.forEach((link) => {
 
-  if (!navWrap) return;
+  link.addEventListener("click", (event) => {
 
-  if (window.scrollY > 30) {
-    navWrap.classList.add("scrolled");
-  } else {
-    navWrap.classList.remove("scrolled");
-  }
+    event.preventDefault();
+
+    const certificateName =
+      link.getAttribute("data-certificate");
+
+    if (modalTitle) {
+      modalTitle.textContent = certificateName;
+    }
+
+    if (modal) {
+      modal.classList.add("active");
+    }
+
+  });
+
+});
+
+
+if (modalClose) {
+
+  modalClose.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
 
 }
 
-window.addEventListener(
-  "scroll",
-  updateNavbar
-);
 
-updateNavbar();
+if (modal) {
 
+  modal.addEventListener("click", (event) => {
 
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
-
-const sections =
-  document.querySelectorAll("section[id]");
-
-const navItems =
-  document.querySelectorAll(".nav-links a");
-
-const sectionObserver =
-  new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach((entry) => {
-
-        if (!entry.isIntersecting) return;
-
-        const currentId =
-          entry.target.getAttribute("id");
-
-        navItems.forEach((item) => {
-
-          item.classList.remove("active");
-
-          if (
-            item.getAttribute("href") ===
-            `#${currentId}`
-          ) {
-
-            item.classList.add("active");
-
-          }
-
-        });
-
-      });
-
-    },
-    {
-      threshold: 0.35
+    if (event.target === modal) {
+      modal.classList.remove("active");
     }
-  );
+
+  });
+
+}
 
 
-sections.forEach((section) => {
-  sectionObserver.observe(section);
+document.addEventListener("keydown", (event) => {
+
+  if (event.key === "Escape" && modal) {
+    modal.classList.remove("active");
+  }
+
 });
 
 
 /* =========================================================
-   CURSOR GLOW
+   SMOOTH NAVIGATION OFFSET
 ========================================================= */
 
-const cursorGlow =
-  document.querySelector(".cursor-glow");
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
-if (
-  cursorGlow &&
-  window.matchMedia("(pointer: fine)").matches
-) {
+  link.addEventListener("click", (event) => {
 
-  document.addEventListener(
-    "mousemove",
-    (event) => {
+    const targetId = link.getAttribute("href");
 
-      cursorGlow.style.left =
-        `${event.clientX}px`;
+    if (!targetId || targetId === "#") return;
 
-      cursorGlow.style.top =
-        `${event.clientY}px`;
+    const target = document.querySelector(targetId);
 
-    }
-  );
+    if (!target) return;
 
-}
+    event.preventDefault();
 
+    const navbarHeight =
+      document.querySelector(".navbar")?.offsetHeight || 0;
 
-/* =========================================================
-   CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
-========================================================= */
+    const targetPosition =
+      target.getBoundingClientRect().top +
+      window.scrollY -
+      navbarHeight;
 
-document.addEventListener(
-  "click",
-  (event) => {
+    window.scrollTo({
+      top: targetPosition,
+      behavior: "smooth"
+    });
 
-    if (!navLinks || !menuBtn) return;
+  });
 
-    const clickedInsideMenu =
-      navLinks.contains(event.target);
-
-    const clickedButton =
-      menuBtn.contains(event.target);
-
-    if (
-      navLinks.classList.contains("open") &&
-      !clickedInsideMenu &&
-      !clickedButton
-    ) {
-
-      navLinks.classList.remove("open");
-
-      menuBtn.setAttribute(
-        "aria-label",
-        "Open menu"
-      );
-
-    }
-
-  }
-);
-
-
-/* =========================================================
-   ESCAPE KEY FOR MOBILE MENU
-========================================================= */
-
-document.addEventListener(
-  "keydown",
-  (event) => {
-
-    if (event.key !== "Escape") return;
-
-    if (!navLinks) return;
-
-    navLinks.classList.remove("open");
-
-    if (menuBtn) {
-      menuBtn.setAttribute(
-        "aria-label",
-        "Open menu"
-      );
-    }
-
-  }
-);
+});
