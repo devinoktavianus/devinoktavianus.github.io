@@ -976,6 +976,7 @@ button {
   position: relative;
 
   width: max(100%, 2450px);
+  min-width: 2450px;
   min-height: 690px;
 }
 
@@ -1076,6 +1077,8 @@ button {
 
   width: 230px;
   height: 250px;
+  min-height: 250px;
+  max-height: 250px;
 
   box-sizing: border-box;
 
