@@ -776,7 +776,8 @@ button {
 
 .about-facts {
   display: grid;
-  grid-template-columns: 0.8fr 1fr 1.25fr 1.6fr;
+  grid-template-columns: 0.85fr 1fr 1.25fr;
+  grid-template-rows: auto auto;
 
   margin-top: 95px;
 
@@ -798,6 +799,17 @@ button {
 
 .fact-item:last-child {
   border-right: 0;
+}
+
+.skills-fact {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border);
+  border-right: 0;
+  min-height: 135px;
+}
+
+.skills-fact .fact-label {
+  margin-bottom: 16px;
 }
 
 .fact-label {
@@ -831,11 +843,12 @@ button {
 .skill-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 9px;
+  max-width: 900px;
 }
 
 .skill-chips span {
-  padding: 7px 9px;
+  padding: 8px 11px;
 
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -897,13 +910,14 @@ button {
   position: relative;
 
   width: 100%;
+  min-width: 2850px;
 
   min-height: 650px;
 
   overflow-x: auto;
   overflow-y: hidden;
 
-  padding: 0 30px 30px;
+  padding: 0 105px 30px;
 
   scrollbar-width: thin;
   scrollbar-color: rgba(118, 167, 255, 0.3) transparent;
@@ -927,8 +941,8 @@ button {
 
   top: 50%;
 
-  left: 30px;
-  right: 30px;
+  left: 105px;
+  right: 105px;
 
   height: 1px;
 
@@ -1599,6 +1613,11 @@ button {
 
   .about-facts {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .skills-fact {
+    grid-column: 1 / -1;
   }
 
   .fact-item:nth-child(2) {
@@ -1789,8 +1808,13 @@ button {
 
   .about-facts {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
 
     margin-top: 65px;
+  }
+
+  .skills-fact {
+    grid-column: auto;
   }
 
   .fact-item {
@@ -1807,6 +1831,7 @@ button {
   }
 
   .experience-wrapper {
+    min-width: 0;
     min-height: auto;
 
     overflow-x: visible;
